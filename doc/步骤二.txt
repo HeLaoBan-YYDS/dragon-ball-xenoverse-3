@@ -25,10 +25,10 @@
 ./src/app/[locale]/about/page.tsx
 
 检查并更新seo内容：
-⚠️ 旧模板的站点域名回退值常散落在多个文件且不统一（如 robots.ts/sitemap.ts 用 `.net`、layout/page 用 `.sbs`），必须 grep 出所有旧域名一次性统一替换为 anime-vanguards-wiki.wiki，别只改一处。
-1）robots.ts - 正确使用 `NEXT_PUBLIC_SITE_URL` 环境变量，回退值使用 anime-vanguards-wiki.wiki
+⚠️ 旧模板的站点域名回退值常散落在多个文件且不统一（如 robots.ts/sitemap.ts 用 `.net`、layout/page 用 `.sbs`），必须 grep 出所有旧域名一次性统一替换为 dragon-ball-xenoverse-3.wiki，别只改一处。
+1）robots.ts - 正确使用 `NEXT_PUBLIC_SITE_URL` 环境变量，回退值使用 dragon-ball-xenoverse-3.wiki
 2）sitemap.ts - 正确使用 `NEXT_PUBLIC_SITE_URL`，staticPaths 列表与 CONTENT_TYPES 匹配
-3）layout.tsx（`src/app/[locale]/layout.tsx`）- 默认 title 使用 "anime vanguards Wiki"，Organization JSON-LD 的 name/url/logo/image 正确
+3）layout.tsx（`src/app/[locale]/layout.tsx`）- 默认 title 使用 "dragon ball xenoverse 3 Wiki"，Organization JSON-LD 的 name/url/logo/image 正确
 4）`src/app/[locale]/[...slug]/page.tsx` - 文章页和列表页的内联 JSON-LD 正确（Article + BreadcrumbList / ItemList）
 5）首页结构化数据正确（`src/app/[locale]/page.tsx` 的 WebSite JSON-LD）
 6）确保 layout.tsx 同时输出 og:image、twitter:image、summary_large_image
@@ -56,7 +56,7 @@ Footer 链接标签使用翻译键（`footer.playGame`、`footer.officialDiscord
 rg -n "VV Ultimatum" ./src/app/ ./src/components/ ./src/locales/
 
 # 验证新主题名称
-grep "anime vanguards" ./src/app/[locale]/layout.tsx
+grep "dragon ball xenoverse 3" ./src/app/[locale]/layout.tsx
 
 # 对比"需求文档链接集合"与"页面实际链接集合"
 REQ_LINKS=$(mktemp)

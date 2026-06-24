@@ -86,13 +86,77 @@ export function Breadcrumbs({ items }: { items: { label: string; href?: string }
 export async function WikiSidebar({ locale, navGroups, currentPath }: { locale: string; navGroups: NavGroup[]; currentPath?: string }) {
   const t = await getTranslations({ locale, namespace: "shared" });
   const isActive = (href: string) => currentPath === href;
-  return <aside className="space-y-6 lg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto lg:pr-1"><section className="rounded-2xl border border-border bg-card/60 p-5 shadow-sm"><h3 className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-muted-foreground">{t("wikiNavigation")}</h3><div className="space-y-4">{navGroups.map((group) => <CollapsibleNavGroup key={group.slug} title={group.title} icon={<span className="grid h-4 w-4 place-items-center rounded text-[10px] font-bold text-[hsl(var(--nav-theme))]">{group.title[0]}</span>} count={group.count} currentPath={currentPath}><ul className="space-y-1">{group.links.map((link) => <li key={link.href}><Link href={localizeHref(link.href, locale)} className={`flex items-center gap-2 rounded-lg px-2 py-1.5 text-sm transition-colors ${isActive(link.href) ? "bg-[hsl(var(--nav-theme)/0.15)] font-semibold text-[hsl(var(--nav-theme))]" : "text-muted-foreground hover:bg-muted hover:text-foreground"}`}><span className="truncate">{link.label}</span>{link.badge && <Badge variant="secondary" className="ml-auto h-5 border-border px-1.5 text-[10px]">{link.badge}</Badge>}</Link></li>)}</ul></CollapsibleNavGroup>)}</div></section><section className="rounded-2xl border border-border bg-card/60 p-5"><h3 className="mb-3 text-sm font-bold text-foreground">{t("activeCodes")}</h3><div className="space-y-3 text-sm"><div className="rounded-xl bg-muted p-3"><code className="font-bold text-foreground">FULLRELEASE</code><p className="mt-1 text-muted-foreground">1x Manipulator's Eyepatch (Limited) + 10x Clan Reroll</p></div><div className="rounded-xl bg-muted p-3"><code className="font-bold text-foreground">75KLIKES</code><p className="mt-1 text-muted-foreground">3x Ability Reroll</p></div><Link href={localizeHref("/codes", locale)} className="inline-flex items-center gap-1 text-sm font-semibold text-[hsl(var(--nav-theme))]">{t("viewAllCodes")} <ChevronRight className="h-4 w-4" /></Link></div></section></aside>;
+  return (
+    <aside className="space-y-6 lg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto lg:pr-1">
+      <section className="rounded-2xl border border-border bg-card/60 p-5 shadow-sm">
+        <h3 className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-muted-foreground">{t("wikiNavigation")}</h3>
+        <div className="space-y-4">
+          {navGroups.map((group) => (
+            <CollapsibleNavGroup key={group.slug} title={group.title} icon={<span className="grid h-4 w-4 place-items-center rounded text-[10px] font-bold text-[hsl(var(--nav-theme))]">{group.title[0]}</span>} count={group.count} currentPath={currentPath}>
+              <ul className="space-y-1">
+                {group.links.map((link) => (
+                  <li key={link.href}>
+                    <Link href={localizeHref(link.href, locale)} className={`flex items-center gap-2 rounded-lg px-2 py-1.5 text-sm transition-colors ${isActive(link.href) ? "bg-[hsl(var(--nav-theme)/0.15)] font-semibold text-[hsl(var(--nav-theme))]" : "text-muted-foreground hover:bg-muted hover:text-foreground"}`}>
+                      <span className="truncate">{link.label}</span>
+                      {link.badge && <Badge variant="secondary" className="ml-auto h-5 border-border px-1.5 text-[10px]">{link.badge}</Badge>}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </CollapsibleNavGroup>
+          ))}
+        </div>
+      </section>
+      <section className="rounded-2xl border border-border bg-card/60 p-5">
+        <h3 className="mb-3 text-sm font-bold text-foreground">{t("activeCodes")}</h3>
+        <div className="space-y-3 text-sm">
+          <div className="rounded-xl bg-muted p-3">
+            <code className="font-bold text-foreground">暂无兑换码</code>
+            <p className="mt-1 text-muted-foreground">No official Dragon Ball Xenoverse 3 redemption codes have been announced yet.</p>
+          </div>
+          <div className="rounded-xl bg-muted p-3">
+            <code className="font-bold text-foreground">暂无兑换码</code>
+            <p className="mt-1 text-muted-foreground">Check Bandai Namco official news and channels for future code announcements.</p>
+          </div>
+          <Link href={localizeHref("/codes", locale)} className="inline-flex items-center gap-1 text-sm font-semibold text-[hsl(var(--nav-theme))]">{t("viewAllCodes")} <ChevronRight className="h-4 w-4" /></Link>
+        </div>
+      </section>
+    </aside>
+  );
 }
 
 export async function SiteFooter({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "footer" });
   const site = await getTranslations({ locale, namespace: "site" });
-  return <footer className="mt-16 border-t border-border bg-card/30"><div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8"><div className="mb-10 rounded-2xl border border-border bg-muted/40 p-5"><div className="font-bold text-foreground">Dragon Ball Xenoverse 3</div><p className="mt-1 text-sm text-muted-foreground">Officially announced Dragon Ball action-adventure for PS5, Xbox Series X|S, and Steam, set in AGE 1000 West City.</p><Link href="https://www.bandainamcoent.com/games/dragon-ball-xenoverse-3" className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--nav-theme))]">Official Site <ExternalLink className="h-4 w-4" /></Link></div><p className="mb-8 text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">{site("legalNotice")}</p><div className="grid gap-8 md:grid-cols-4"><div className="md:col-span-2"><h3 className="font-bold text-foreground">Dragon Ball Xenoverse 3 Wiki</h3><p className="mt-3 max-w-xl text-sm leading-7 text-muted-foreground">Dragon Ball Xenoverse 3 Wiki is an independent fan-made guide hub covering official trailers, release-window updates, West City story details, and combat system explainers.</p></div><FooterList title={t("quickLinks")} links={[["Official Site", "https://www.bandainamcoent.com/games/dragon-ball-xenoverse-3"], ["Official News", "https://www.bandainamcoent.com/games/dragon-ball-xenoverse-3/news"], ["Welcome Trailer", "https://www.youtube.com/watch?v=0vCy0PoOw1M"], ["Community Reddit", "https://www.reddit.com/r/dbxv/"]]} /><FooterList title={t("guides")} links={[[t("beginnerGuide"), "/beginner-guide"], [t("raceGuides"), "/races"], [t("bossGuides"), "/bosses"], [t("buildGuide"), "/builds"], [t("privacyPolicy"), "/privacy-policy"], [t("termsOfService"), "/terms-of-service"]]} /></div><p className="mt-10 border-t border-border pt-6 text-xs text-muted-foreground">{t("copyright")}</p></div></footer>;
+  return (
+    <footer className="mt-16 border-t border-border bg-card/30">
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+        <div className="mb-10 rounded-2xl border border-border bg-muted/40 p-5">
+          <div className="font-bold text-foreground">{site("name")}</div>
+          <p className="mt-1 text-sm text-muted-foreground">{t("description")}</p>
+          <Link href="https://www.bandainamcoent.com/games/dragon-ball-xenoverse-3" className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--nav-theme))]">{t("playGame")} <ExternalLink className="h-4 w-4" /></Link>
+        </div>
+        <p className="mb-8 text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">{site("legalNotice")}</p>
+        <div className="grid gap-8 md:grid-cols-4">
+          <div className="md:col-span-2">
+            <h3 className="font-bold text-foreground">{t("aboutTitle")}</h3>
+            <p className="mt-3 max-w-xl text-sm leading-7 text-muted-foreground">{t("about")}</p>
+          </div>
+          <FooterList
+            title={t("quickLinks")}
+            links={[
+              [t("playGame"), "https://www.bandainamcoent.com/games/dragon-ball-xenoverse-3"],
+              [t("officialDiscord"), "https://www.reddit.com/r/dbxv/"],
+              [t("officialYoutube"), "https://www.youtube.com/NamcoBandaiGames"],
+              [t("vvBuilder"), "https://www.bandainamcoent.com/games/dragon-ball-xenoverse-3/news"],
+            ]}
+          />
+          <FooterList title={t("guides")} links={[[t("beginnerGuide"), "/beginner-guide"], [t("raceGuides"), "/races"], [t("bossGuides"), "/bosses"], [t("buildGuide"), "/builds"], [t("privacyPolicy"), "/privacy-policy"], [t("termsOfService"), "/terms-of-service"]]} />
+        </div>
+        <p className="mt-10 border-t border-border pt-6 text-xs text-muted-foreground">{t("copyright")}</p>
+      </div>
+    </footer>
+  );
 }
 
 function FooterList({ title, links }: { title: string; links: string[][] }) { return <div><h4 className="font-semibold text-foreground">{title}</h4><ul className="mt-3 space-y-2 text-sm text-muted-foreground">{links.map(([label, href]) => <li key={href}><Link className="hover:text-foreground" href={href}>{label}</Link></li>)}</ul></div>; }

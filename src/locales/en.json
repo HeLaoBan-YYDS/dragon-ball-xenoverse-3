@@ -1,10 +1,10 @@
 {
   "site": {
-    "name": "VV: ULTIMATUM",
-    "shortName": "VV Ultimatum",
+    "name": "Dragon Ball Xenoverse 3 Wiki",
+    "shortName": "DBXV3 Wiki",
     "tagline": "Fan-Made Community Wiki",
-    "description": "Your complete companion for VV: ULTIMATUM on Roblox. Master all three races Shinigami, Quincy, and Hollow with in-depth guides, boss strategies, build optimization, and the latest codes.",
-    "legalNotice": "Non-official fan wiki. Made by players, for players."
+    "description": "Fan-made Dragon Ball Xenoverse 3 guide hub covering official trailers, PS5, Xbox Series X|S, Steam platform news, West City, races, Soul Assist, and Soul Switch.",
+    "legalNotice": "Independent fan-made Dragon Ball Xenoverse 3 wiki. Not affiliated with Bandai Namco, DIMPS, Shueisha, Toei Animation, or Bird Studio."
   },
   "nav": {
     "races": "Races",
@@ -21,23 +21,23 @@
   },
   "home": {
     "meta": {
-      "title": "VV: ULTIMATUM — Codes, Builds, Guides | VV Ultimatum Wiki",
-      "description": "Complete VV: ULTIMATUM wiki with active codes, boss strategies, race guides, build optimization, and progression walkthroughs for Shinigami, Quincy, and Hollow."
+      "title": "Dragon Ball Xenoverse 3 Wiki - Release Date, Trailer",
+      "description": "Track Dragon Ball Xenoverse 3 with beginner-ready guides, official trailer news, PS5, Xbox Series X|S, Steam platforms, West City, races, and combat systems."
     },
     "hero": {
       "eyebrow": "Fan-Made Community Wiki",
-      "title": "VV: ULTIMATUM",
-      "description": "Your complete companion for VV: ULTIMATUM on Roblox. Master all three races Shinigami, Quincy, and Hollow with in-depth guides, boss strategies, build optimization, and the latest codes.",
+      "title": "Dragon Ball Xenoverse 3 Wiki",
+      "description": "Create your own hero in AGE 1000, explore West City, and follow a new Dragon Ball story built around original characters and familiar allies. Official materials highlight fast aerial combat, race-based playstyles, Soul Assist team attacks, and Soul Switch power-ups.",
       "stats": [
-        "Launched Jun 5",
-        "Updated Jun 11",
-        "3 Races",
-        "Lv100 Cap",
-        "130+ Skills"
+        "Announced Apr 19 2026",
+        "Latest Trailer Jun 23 2026",
+        "Launch Window 2027",
+        "Platforms PS5, Xbox Series X|S, Steam",
+        "Setting AGE 1000 West City"
       ],
-      "primaryCta": "Start Beginner Guide",
-      "secondaryCta": "Compare Races",
-      "tertiaryCta": "Check Active Codes",
+      "primaryCta": "Read the PS5 / Xbox / Steam Guide",
+      "secondaryCta": "Wishlist on PlayStation 5",
+      "tertiaryCta": "Wishlist on Xbox Series X|S",
       "videoLabel": "Official media"
     },
     "updates": {
@@ -429,10 +429,10 @@
       ]
     },
     "finalCta": {
-      "title": "Ready to Master VV: ULTIMATUM?",
-      "description": "From your first steps in Fort Adams to endgame boss fights our community wiki has you covered with free, up-to-date guides.",
-      "primary": "Read the Beginner Guide",
-      "secondary": "Play on Roblox"
+      "title": "Ready for Dragon Ball Xenoverse 3?",
+      "description": "From your first look at AGE 1000 to PS5, Xbox Series X|S, and Steam launch details, this fan-made community wiki helps you prepare with verified official information.",
+      "primary": "Read the PS5 / Xbox / Steam Guide",
+      "secondary": "See PS5, Xbox Series X|S, and Steam Info"
     }
   },
   "bosses": {
@@ -466,17 +466,17 @@
     "noGuidesAvailable": "No guides available yet. Check back soon!"
   },
   "footer": {
-    "aboutTitle": "VV Ultimatum Wiki",
-    "about": "VV Ultimatum Wiki is an independent fan-built guide hub covering progression routes, races, bosses, builds, and essential game knowledge for new and veteran players alike.",
+    "aboutTitle": "Dragon Ball Xenoverse 3 Wiki",
+    "about": "Dragon Ball Xenoverse 3 Wiki is an independent fan-made guide hub covering official trailers, release-window updates, West City story details, and combat system explainers. We focus on beginner onboarding, race choices, platform links, and verified news for players preparing for launch.",
     "quickLinks": "Quick Links",
     "guides": "Guides",
     "legal": "Legal",
-    "copyright": "2026 VV: ULTIMATUM Wiki. Not affiliated with Midnight Continent or Roblox.",
-    "description": "Free Bleach-inspired fighting RPG on Roblox. 3 races, 130+ skills, Lv100 cap.",
-    "playGame": "Play VV: ULTIMATUM",
-    "officialDiscord": "Official Discord",
-    "officialYoutube": "Official YouTube",
-    "vvBuilder": "VV Builder (Skill Planner)",
+    "copyright": "2026 Dragon Ball Xenoverse 3 Wiki. Not affiliated with Bandai Namco, DIMPS, Shueisha, Toei Animation, or Bird Studio.",
+    "description": "Officially announced Dragon Ball action-adventure for PlayStation 5, Xbox Series X|S, and PC via Steam, set in AGE 1000 West City.",
+    "playGame": "Official Dragon Ball Xenoverse 3 Site",
+    "officialDiscord": "DBXV Community Discord via Reddit",
+    "officialYoutube": "Bandai Namco Official YouTube",
+    "vvBuilder": "Official Dragon Ball Xenoverse 3 News",
     "beginnerGuide": "Beginner Guide",
     "raceGuides": "Race Guides",
     "bossGuides": "Boss Guides",
