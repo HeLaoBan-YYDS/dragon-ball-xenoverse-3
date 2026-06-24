@@ -1,13 +1,14 @@
 import createNextIntlPlugin from "next-intl/plugin";
 import createMDX from "@next/mdx";
 import remarkGfm from "remark-gfm";
+import rehypeSlug from "rehype-slug";
 
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 const withMDX = createMDX({
   options: {
     remarkPlugins: [remarkGfm],
-    rehypePlugins: [],
+    rehypePlugins: [rehypeSlug],
   },
 });
 

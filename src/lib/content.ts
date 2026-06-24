@@ -78,6 +78,7 @@ const CONTENT_ROOT = path.join(process.cwd(), "content");
 function extractHeadings(mdxSource: string): Heading[] {
   const headings: Heading[] = [];
   const lines = mdxSource.split("\n");
+  const slugger = new GithubSlugger();
 
   for (const line of lines) {
     const match = line.match(/^(#{2,3})\s+(.+)/);
@@ -85,12 +86,7 @@ function extractHeadings(mdxSource: string): Heading[] {
 
     const level = match[1].length;
     const text = match[2].replace(/\{[^}]*\}/g, "").trim();
-    const id = text
-      .toLowerCase()
-      .replace(/[^a-z0-9\s-]/g, "")
-      .replace(/\s+/g, "-")
-      .replace(/-+/g, "-")
-      .replace(/^-|-$/g, "");
+    const id = slugger.slug(text);
 
     headings.push({ id, text, level });
   }

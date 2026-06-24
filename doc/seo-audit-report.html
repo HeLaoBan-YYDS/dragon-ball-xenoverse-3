@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dragon Ball Xenoverse 3 Wiki SEO 审计报告</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f6f7fb;
+        --panel: #ffffff;
+        --ink: #172033;
+        --muted: #647087;
+        --line: #d9deea;
+        --accent: #d63d2e;
+        --accent-soft: #fff0ed;
+        --warn: #a76300;
+        --warn-soft: #fff7e8;
+        --good: #137a4a;
+        --good-soft: #ecf8f1;
+        --code: #111827;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei",
+          "PingFang SC", sans-serif;
+        line-height: 1.65;
+      }
+
+      main {
+        width: min(1120px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 40px 0 64px;
+      }
+
+      header,
+      section {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 28px;
+        margin-bottom: 18px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        line-height: 1.25;
+        margin: 0 0 14px;
+      }
+
+      h1 {
+        font-size: clamp(28px, 4vw, 42px);
+        letter-spacing: 0;
+      }
+
+      h2 {
+        font-size: 24px;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 10px;
+      }
+
+      h3 {
+        font-size: 18px;
+        margin-top: 22px;
+      }
+
+      p {
+        margin: 0 0 14px;
+      }
+
+      ul,
+      ol {
+        margin: 10px 0 0;
+        padding-left: 22px;
+      }
+
+      li {
+        margin: 7px 0;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 14px;
+        overflow-wrap: anywhere;
+      }
+
+      th,
+      td {
+        border: 1px solid var(--line);
+        padding: 10px 12px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: #f0f3f9;
+        font-weight: 700;
+      }
+
+      code {
+        color: var(--code);
+        background: #eef1f7;
+        border-radius: 4px;
+        padding: 2px 5px;
+        font-family: Consolas, "SFMono-Regular", monospace;
+        font-size: 0.92em;
+      }
+
+      .meta {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .meta div,
+      .stat {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 12px;
+        background: #fbfcff;
+      }
+
+      .label {
+        display: block;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .value {
+        display: block;
+        font-size: 17px;
+        font-weight: 700;
+        margin-top: 3px;
+      }
+
+      .badge {
+        display: inline-block;
+        border-radius: 999px;
+        padding: 3px 9px;
+        font-size: 12px;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .high {
+        background: var(--accent-soft);
+        color: var(--accent);
+      }
+
+      .medium {
+        background: var(--warn-soft);
+        color: var(--warn);
+      }
+
+      .low,
+      .pass {
+        background: var(--good-soft);
+        color: var(--good);
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
+        margin-top: 14px;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 24px;
+      }
+
+      .note {
+        border-left: 4px solid var(--warn);
+        background: var(--warn-soft);
+        padding: 12px 14px;
+        border-radius: 6px;
+      }
+
+      .good-box {
+        border-left: 4px solid var(--good);
+        background: var(--good-soft);
+        padding: 12px 14px;
+        border-radius: 6px;
+      }
+
+      .finding {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 14px;
+      }
+
+      .finding-head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 8px;
+      }
+
+      .finding h3 {
+        margin: 0;
+      }
+
+      @media print {
+        body {
+          background: #fff;
+        }
+
+        main {
+          width: 100%;
+          padding: 0;
+        }
+
+        header,
+        section {
+          break-inside: avoid;
+          border-radius: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Dragon Ball Xenoverse 3 Wiki SEO 审计报告</h1>
+        <p>
+          本报告基于本地开发地址 <code>http://localhost:3000</code> 的抓取结果，
+          重点覆盖抓取与索引、站点地图、国际化 SEO、页面标题与描述、结构化数据、
+          内容质量和优先修复建议。
+        </p>
+        <div class="meta">
+          <div>
+            <span class="label">审计日期</span>
+            <span class="value">2026-06-24</span>
+          </div>
+          <div>
+            <span class="label">审计对象</span>
+            <span class="value">http://localhost:3000</span>
+          </div>
+          <div>
+            <span class="label">站点类型</span>
+            <span class="value">多语言游戏 Wiki / 内容站</span>
+          </div>
+          <div>
+            <span class="label">语言版本</span>
+            <span class="value">en / es / ja / fr</span>
+          </div>
+        </div>
+      </header>
+
+      <section>
+        <h2>执行摘要</h2>
+        <div class="good-box">
+          当前站点的基础 SEO 结构总体健康：robots 可访问，sitemap 可访问且包含
+          hreflang，抽样 URL 返回 200，页面有 canonical、H1、JSON-LD 和图片 alt。
+        </div>
+        <p>
+          需要优先处理的问题集中在两个方向：文章页标题系统性过长，以及部分 meta
+          description 过长。另一个中优先级问题是 sitemap 的
+          <code>lastmod</code> 当前使用请求时间，会让所有 URL 每次看起来都刚更新。
+        </p>
+        <div class="stats">
+          <div class="stat">
+            <span class="label">Sitemap URL</span>
+            <strong>204</strong>
+            <span>无重复 URL</span>
+          </div>
+          <div class="stat">
+            <span class="label">抽样状态码</span>
+            <strong>200</strong>
+            <span>首页、分类页、文章页均通过</span>
+          </div>
+          <div class="stat">
+            <span class="label">文章标题过长</span>
+            <strong>152 / 152</strong>
+            <span>追加品牌名后全部超过 60 字符</span>
+          </div>
+          <div class="stat">
+            <span class="label">描述过长</span>
+            <strong>68 / 152</strong>
+            <span>超过 160 字符</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>已验证的健康项</h2>
+        <ul>
+          <li><code>/robots.txt</code> 返回 200，允许所有爬虫抓取，并声明 sitemap。</li>
+          <li><code>/sitemap.xml</code> 返回 200，包含 204 个唯一 URL。</li>
+          <li>sitemap URL 均为 HTTPS 生产域名 <code>dragon-ball-xenoverse-3.wiki</code>。</li>
+          <li>sitemap 每个 URL 块包含 <code>en</code>、<code>es</code>、<code>ja</code>、<code>fr</code>、<code>x-default</code> hreflang。</li>
+          <li>抽样 URL 状态码均为 200，包括首页、分类页、英文文章页和多语言文章页。</li>
+          <li>抽样页面均存在唯一 H1。</li>
+          <li>抽样页面图片均存在 alt 文本。</li>
+          <li>MDX 内容库未发现重复 title 或重复 description。</li>
+          <li>首页服务端 HTML 中包含 Organization 和 WebSite JSON-LD。</li>
+          <li>文章页服务端 HTML 中包含 Article/Breadcrumb 等 JSON-LD 块。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>关键问题</h2>
+
+        <article class="finding">
+          <div class="finding-head">
+            <h3>1. 文章页 title tag 系统性过长</h3>
+            <span class="badge high">高优先级</span>
+          </div>
+          <p>
+            所有 152 个 MDX 文章页在生成页面 title 后都超过 60 字符。当前逻辑会将
+            MDX 标题直接追加 <code> - Dragon Ball Xenoverse 3 Wiki</code>，导致搜索结果中
+            标题极易被截断，核心关键词和点击动机可能展示不完整。
+          </p>
+          <table>
+            <tr>
+              <th>证据</th>
+              <td>
+                <code>src/app/[locale]/[...slug]/page.tsx:79</code>
+                使用 <code>${item.metadata.title} - ${siteName}</code>。抽样文章
+                <code>release-date</code> 的生成 title 长度为 126 字符。
+              </td>
+            </tr>
+            <tr>
+              <th>影响</th>
+              <td>降低 SERP 可读性和点击率；长标题也会让不同页面的前半段更相似。</td>
+            </tr>
+            <tr>
+              <th>建议</th>
+              <td>
+                在 MDX metadata 中新增可选 <code>seoTitle</code>；页面优先使用
+                <code>seoTitle</code>，没有时再回退到 <code>title</code>。文章页品牌后缀可缩短为
+                <code>DBXV3 Wiki</code>，或当标题已经较长时不追加品牌名。
+              </td>
+            </tr>
+          </table>
+        </article>
+
+        <article class="finding">
+          <div class="finding-head">
+            <h3>2. 部分 meta description 超出推荐长度</h3>
+            <span class="badge high">高优先级</span>
+          </div>
+          <p>
+            68 个 MDX description 超过 160 字符。抽样西语文章 description 长度为
+            182 字符，搜索结果中大概率被截断。
+          </p>
+          <table>
+            <tr>
+              <th>证据</th>
+              <td>
+                <code>src/app/[locale]/[...slug]/page.tsx:80</code>
+                直接使用 <code>item.metadata.description</code>。
+              </td>
+            </tr>
+            <tr>
+              <th>影响</th>
+              <td>搜索摘要可控性下降，用户在 SERP 中看到的卖点可能不完整。</td>
+            </tr>
+            <tr>
+              <th>建议</th>
+              <td>
+                新增 <code>seoDescription</code> 字段，控制在 140-160 字符；现有
+                <code>description</code> 可继续用于页面卡片和正文摘要。
+              </td>
+            </tr>
+          </table>
+        </article>
+
+        <article class="finding">
+          <div class="finding-head">
+            <h3>3. Sitemap lastmod 每次请求都会变化</h3>
+            <span class="badge medium">中优先级</span>
+          </div>
+          <p>
+            当前 sitemap 使用 <code>new Date()</code> 生成每个 URL 的 lastmod。这会让搜索引擎
+            认为所有页面每次都刚更新，长期可能降低 sitemap 更新信号的可信度。
+          </p>
+          <table>
+            <tr>
+              <th>证据</th>
+              <td><code>src/app/sitemap.ts:42</code> 使用 <code>lastModified: new Date()</code>。</td>
+            </tr>
+            <tr>
+              <th>影响</th>
+              <td>浪费抓取注意力；真实更新页面与未更新页面无法区分。</td>
+            </tr>
+            <tr>
+              <th>建议</th>
+              <td>
+                动态文章 URL 使用 MDX metadata 中的 <code>lastModified</code> 或
+                <code>date</code>；静态页使用固定版本日期或文件修改时间。
+              </td>
+            </tr>
+          </table>
+        </article>
+
+        <article class="finding">
+          <div class="finding-head">
+            <h3>4. 本地 dev 模式性能信号偏重，需要生产复测</h3>
+            <span class="badge medium">中优先级</span>
+          </div>
+          <p>
+            本地抓取中首页 HTML 约 430KB，文章页约 460-478KB。首页本地 TTFB 抽样为
+            4.45 秒，文章页约 0.5 秒。由于这是 dev server，缓存头为
+            <code>no-store</code>，不能直接等同于生产性能。
+          </p>
+          <table>
+            <tr>
+              <th>影响</th>
+              <td>如果生产环境也存在较大 HTML 或较慢 TTFB，会影响抓取效率和 Core Web Vitals。</td>
+            </tr>
+            <tr>
+              <th>建议</th>
+              <td>
+                在生产构建或真实部署上跑 Lighthouse / PageSpeed Insights。若 HTML 仍偏大，
+                优先检查 React Server Component payload、首页文章列表数量、嵌入数据和未必要的页面级内容。
+              </td>
+            </tr>
+          </table>
+        </article>
+
+        <article class="finding">
+          <div class="finding-head">
+            <h3>5. 结构化数据需要用生产 URL 做 Rich Results 验证</h3>
+            <span class="badge low">低优先级</span>
+          </div>
+          <p>
+            服务端 HTML 已看到 JSON-LD，但本地浏览器渲染校验在本次环境中超时。
+            这不代表 schema 缺失，只说明最终富结果资格还应在生产地址上验证。
+          </p>
+          <table>
+            <tr>
+              <th>建议</th>
+              <td>
+                部署后使用 Google Rich Results Test 检查首页和代表文章页，确认
+                Organization、WebSite、Article、BreadcrumbList 是否可解析且无警告。
+              </td>
+            </tr>
+          </table>
+        </article>
+      </section>
+
+      <section>
+        <h2>抽样页面数据</h2>
+        <table>
+          <tr>
+            <th>页面</th>
+            <th>状态</th>
+            <th>Title 长度</th>
+            <th>Description 长度</th>
+            <th>H1</th>
+            <th>JSON-LD</th>
+          </tr>
+          <tr>
+            <td><code>/</code></td>
+            <td><span class="badge pass">200</span></td>
+            <td>52</td>
+            <td>157</td>
+            <td>1</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td><code>/release</code></td>
+            <td><span class="badge pass">200</span></td>
+            <td>30</td>
+            <td>113</td>
+            <td>1</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td><code>/release/dragon-ball-xenoverse-3-release-date</code></td>
+            <td><span class="badge pass">200</span></td>
+            <td>126</td>
+            <td>151</td>
+            <td>1</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td><code>/es/release/dragon-ball-xenoverse-3-release-date</code></td>
+            <td><span class="badge pass">200</span></td>
+            <td>143</td>
+            <td>182</td>
+            <td>1</td>
+            <td>3</td>
+          </tr>
+        </table>
+      </section>
+
+      <section>
+        <h2>国际化 SEO 结论</h2>
+        <p>
+          多语言结构整体正确。站点使用子目录承载非英文版本，英文作为默认无前缀版本。
+          sitemap 中所有 URL 块均包含 self-reference 和全部语言 alternate，并包含
+          <code>x-default</code>。
+        </p>
+        <ul>
+          <li>语言代码有效：<code>en</code>、<code>es</code>、<code>ja</code>、<code>fr</code>。</li>
+          <li>canonical 与 hreflang 使用同一生产域名。</li>
+          <li>抽样西语、法语、日语文章返回 200。</li>
+          <li>未发现 cross-locale canonical 问题。</li>
+        </ul>
+        <p class="note">
+          建议在生产部署后检查 HTML head 与 sitemap hreflang 是否完全一致。如果未来扩展到更多语言，
+          sitemap 体积会更快成为限制，应考虑 sitemap index。
+        </p>
+      </section>
+
+      <section>
+        <h2>优先行动计划</h2>
+        <ol>
+          <li>
+            <strong>新增 SEO 专用标题字段：</strong>
+            为 MDX metadata 增加 <code>seoTitle</code>，把核心文章页 title 控制在 50-60 字符。
+          </li>
+          <li>
+            <strong>新增 SEO 专用描述字段：</strong>
+            增加 <code>seoDescription</code>，优先修复 68 个超过 160 字符的页面。
+          </li>
+          <li>
+            <strong>修复 sitemap lastmod：</strong>
+            用内容真实更新时间替代 <code>new Date()</code>。
+          </li>
+          <li>
+            <strong>生产性能复测：</strong>
+            使用生产构建或部署环境跑 Lighthouse，确认 TTFB、LCP、INP、CLS。
+          </li>
+          <li>
+            <strong>生产结构化数据验证：</strong>
+            用 Google Rich Results Test 测首页和代表文章页。
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>审计范围与限制</h2>
+        <ul>
+          <li>本次审计对象为 <code>http://localhost:3000</code>，不是线上公网地址。</li>
+          <li>未接入 Google Search Console、Bing Webmaster Tools 或流量分析数据。</li>
+          <li>性能数据来自本地 dev server，只能作为风险提示，不能替代生产 Core Web Vitals。</li>
+          <li>外链质量、反向链接、真实索引覆盖率和关键词排名未纳入本次工具范围。</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

@@ -36,9 +36,9 @@ export function MobileTOC({ headings, label }: { headings: Heading[]; label: str
       </div>
       {open && (
         <nav className="mt-3 space-y-1 border-t border-border pt-3">
-          {headings.map((h) => (
+          {headings.map((h, i) => (
             <a
-              key={h.id}
+              key={`${h.id}-${i}`}
               href={`#${h.id}`}
               onClick={() => setOpen(false)}
               className={`block rounded-lg px-2 py-1.5 text-sm text-muted-foreground transition hover:bg-muted hover:text-foreground ${
