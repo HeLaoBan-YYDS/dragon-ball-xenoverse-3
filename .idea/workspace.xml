@@ -4,21 +4,54 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bea6a923-81f0-4487-95c6-51fed8751e13" name="Changes" comment="阶段一">
-      <change beforePath="$PROJECT_DIR$/doc/步骤二.txt" beforeDir="false" afterPath="$PROJECT_DIR$/doc/步骤二.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/hero-trailer-thumbnail.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/hero-trailer-thumbnail.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[locale]/HomePageClient.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/HomePageClient.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[locale]/[...slug]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/[...slug]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[locale]/about/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/about/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[locale]/copyright/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/copyright/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[locale]/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[locale]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[locale]/privacy-policy/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/privacy-policy/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[locale]/terms-of-service/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/terms-of-service/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/robots.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/robots.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/sitemap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/sitemap.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/site.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/site.tsx" afterDir="false" />
+    <list default="true" id="bea6a923-81f0-4487-95c6-51fed8751e13" name="Changes" comment="阶段二">
+      <change beforePath="$PROJECT_DIR$/content/en/bosses/gelum.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/en/bosses/vv-ultimatum-calamitas-boss.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/en/bosses/vv-ultimatum-gelum-boss-guide.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/en/bosses/vv-ultimatum-lord-nivis-boss.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/en/bosses/vv-ultimatum-sakkaku-boss-fight.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/en/bosses/vv-ultimatum-shikai-spirit-boss.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/en/codes/vv-ultimatum-codes-working-2026.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/en/guide/VV-Ultimatum-bleach.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/en/guide/VV-Ultimatum-builder.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/en/guide/VV-Ultimatum-how-to-extract.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/en/guide/VV-Ultimatum-how-to-manifest-aura.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/en/guide/VV-Ultimatum-invasion-bell.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/en/guide/vv-ultimatum-beginner-guide-2026.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/en/guide/vv-ultimatum-best-farming-spots.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/en/guide/vv-ultimatum-fastest-leveling.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/en/maps/vv-ultimatum-hueco-mundo-locations.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/en/maps/vv-ultimatum-soul-society-map.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/en/races/vv-ultimatum-quincy-progression.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/en/races/vv-ultimatum-shinigami-guide.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/en/skills/vv-ultimatum-best-skills-ranked.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/en/skills/vv-ultimatum-hakuda-styles-guide.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/en/tier-list/vv-ultimatum-best-resurreccion-tier-list.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/en/tier-list/vv-ultimatum-best-schrift-ranked.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/en/tier-list/vv-ultimatum-best-shikai-tier-list.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/ja/bosses/vv-ultimatum-calamitas-boss.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/ja/bosses/vv-ultimatum-gelum-boss-guide.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/ja/bosses/vv-ultimatum-lord-nivis-boss.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/ja/bosses/vv-ultimatum-sakkaku-boss-fight.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/ja/bosses/vv-ultimatum-shikai-spirit-boss.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/ja/codes/vv-ultimatum-codes-working-2026.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/ja/guide/vv-ultimatum-beginner-guide-2026.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/ja/guide/vv-ultimatum-best-farming-spots.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/ja/guide/vv-ultimatum-fastest-leveling.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/ja/maps/vv-ultimatum-hueco-mundo-locations.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/ja/maps/vv-ultimatum-soul-society-map.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/ja/races/vv-ultimatum-quincy-progression.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/ja/races/vv-ultimatum-shinigami-guide.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/ja/skills/vv-ultimatum-best-skills-ranked.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/ja/skills/vv-ultimatum-hakuda-styles-guide.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/ja/tier-list/vv-ultimatum-best-resurreccion-tier-list.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/ja/tier-list/vv-ultimatum-best-schrift-ranked.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/ja/tier-list/vv-ultimatum-best-shikai-tier-list.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/navigation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/navigation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18n/request.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n/request.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18n/routing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n/routing.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/locales/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locales/ja.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/ja.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +123,7 @@
       <option name="presentableId" value="Default" />
       <updated>1782181932330</updated>
       <workItem from="1782181933450" duration="2000" />
-      <workItem from="1782281089492" duration="4267000" />
+      <workItem from="1782281089492" duration="5295000" />
     </task>
     <task id="LOCAL-00001" summary="初始化步骤">
       <option name="closed" value="true" />
@@ -116,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782284641639</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="阶段二">
+      <option name="closed" value="true" />
+      <created>1782286742465</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1782286742465</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +167,7 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="初始化步骤" />
     <MESSAGE value="阶段一" />
-    <option name="LAST_COMMIT_MESSAGE" value="阶段一" />
+    <MESSAGE value="阶段二" />
+    <option name="LAST_COMMIT_MESSAGE" value="阶段二" />
   </component>
 </project>

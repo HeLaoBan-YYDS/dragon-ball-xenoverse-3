@@ -6,19 +6,7 @@
     "description": "Fan-made Dragon Ball Xenoverse 3 guide hub covering official trailers, PS5, Xbox Series X|S, Steam platform news, West City, races, Soul Assist, and Soul Switch.",
     "legalNotice": "Independent fan-made Dragon Ball Xenoverse 3 wiki. Not affiliated with Bandai Namco, DIMPS, Shueisha, Toei Animation, or Bird Studio."
   },
-  "nav": {
-    "races": "Races",
-    "bosses": "Bosses",
-    "guides": "Guides",
-    "codes": "Codes",
-    "tierList": "Tier List",
-    "maps": "Maps",
-    "skills": "Skills",
-    "updates": "Updates",
-    "home": "Home",
-    "menu": "Menu",
-    "toggleTheme": "Toggle theme"
-  },
+  "nav": {},
   "home": {
     "meta": {
       "title": "Dragon Ball Xenoverse 3 Wiki - Release Date, Trailer",
@@ -435,19 +423,7 @@
       "secondary": "See PS5, Xbox Series X|S, and Steam Info"
     }
   },
-  "bosses": {
-    "meta": {
-      "title": "Bosses — Complete Guide & Walkthrough | VV Ultimatum Wiki",
-      "description": "Complete boss guides for VV: ULTIMATUM — all bosses from tutorial Gelum to endgame encounters with strategies, drops, and respawn timers."
-    },
-    "overviewTitle": "Bosses Overview",
-    "overviewDescription": "Complete guides for every boss encounter in VV: ULTIMATUM 13 bosses from the tutorial knight Gelum to endgame encounters like the Gelid Dweller and Gauntlet challenges.",
-    "body": "Bosses in VV: ULTIMATUM serve as skill gates and progression milestones. Some, like Gelum, teach you the combat fundamentals during the tutorial. Others, such as the Shikai Spirit and Resurreccion Spirit, are inner-world encounters tied directly to your race's power unlock. Area bosses like Dragonfly, King Croc, and Securis guard access to new zones and rewards. Recent additions include the Rogue Commander with his Minions, the ice-themed The Everfrosted, and four brand new endgame bosses: The Gelid Dweller, Cinder of the Broken Sky, Devourer of Hosts, and the Wandering Swordsman (Junichiro). Each boss has distinct attack patterns and telegraphed moves you need to learn. Use the guides below to prepare for every fight.",
-    "guidesTitle": "Bosses Guides",
-    "readMore": "Read more",
-    "new": "New",
-    "popular": "Popular"
-  },
+  "bosses": {},
   "shared": {
     "wikiNavigation": "Wiki Navigation",
     "activeCodes": "Active Codes",
