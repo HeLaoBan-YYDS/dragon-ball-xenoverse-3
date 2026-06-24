@@ -1,0 +1,37 @@
+# 部分 6：多语言翻译
+
+先进行 SEO 全面检查，尤其是链接一致性、旧品牌残留、Loading 占位文字、H1 / 页面主题语义、内链/站内结构完整性。
+
+最后验证，网站是否还有旧主题词残留：
+curl -s http://localhost:${DEV_PORT}/ | grep -o "VV Ultimatum" | wc -l
+
+翻译./src/locales/下对应json文件。
+
+**语言列表真相源是 `./src/i18n/routing.ts` 的 `locales` 数组**（该文件代码注释标注为 supported locales 的 single source of truth）。若 `./doc/languages.json` 存在则作交叉校验，不存在时直接以 `routing.ts` 为准——不要因找不到 `languages.json` 就卡住或终止翻译。
+
+翻译前先清除除英文外的旧多语言文件：
+
+```bash
+find ./src/locales -maxdepth 1 -type f -name '*.json' ! -name 'en.json' -delete
+for LANG in ...; do
+  printf '{}\n' > "./src/locales/${LANG}.json"
+done
+```
+
+## 验证方法
+
+```bash
+# 检查所有语言文件生成
+ls -lh ./src/locales/
+
+# 验证文件大小相近
+wc -l ./src/locales/*.json
+
+# 验证没有旧品牌残留
+grep -Rin "VV Ultimatum" ./src/locales/ || true
+
+# 验证 JSON 合法性
+for f in ./src/locales/*.json; do
+  python3 -c "import json; json.load(open('$f'))" && echo "✅ $f" || echo "❌ $f"
+done
+```

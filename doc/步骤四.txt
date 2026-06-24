@@ -1,0 +1,120 @@
+# 部分 4：首页模块
+
+参考：./doc/00基础信息.md、00首页模块.md（首页 8 模块完整数据；文件名以实际项目为准——早期项目可能是 `00首页信息.md`，现已统一为 `00首页模块.md`，不存在时按实际文件名查找）
+更新首页前端样式文案（删除所有内部URL链接，更新外部链接）
+先列出每个模块要替换的 key 和文案对照表，然后逐模块替换内容（不需要经过我同意）。
+
+**⚠️ 首页结构说明（新模板）：**
+首页由 `en.json` 的 `home` 命名空间驱动，包含以下 section：
+- `home.hero`：Hero 标题 + 描述 + stats + CTA 按钮（Part 2 已更新，跳过）
+- 视频区：`HomePageClient.tsx` 中的 `TrailerButton`（Part 1 已更新 videoId，跳过）
+- `home.updates` + `home.start`：最近更新 + 新手教程（两栏布局，从 MDX 文章动态读取）
+- `home.popular`：Trending Now 自动滚动轮播（从 MDX 文章动态读取）
+- `home.aboutGame`：游戏介绍 + 数据卡片（静态文案，**本 Part 需替换**）
+- `home.explore`：8 个内容模块（`modules` 数组，每个含 name/description/href/displayType/highlights，**本 Part 需替换**）
+- `home.faq`：FAQ 手风琴（`items` 数组，**本 Part 需替换**）
+- `home.finalCta`：底部 CTA（Part 2 已更新，跳过）
+
+**⚠️ 本 Part 需更新的 section（按顺序）：**
+
+1. **`home.start`**（Your Journey 卡片区）—— eyebrow、title、4 张纯展示卡片：
+   ```json
+   "start": {
+     "eyebrow": "Start Here",
+     "title": "Your {GAME_NAME} Journey",
+     "cards": [
+       {"number": "1", "title": "Beginner Guide", "description": "..."},
+       {"number": "2", "title": "...", "description": "..."},
+       {"number": "3", "title": "...", "description": "..."},
+       {"number": "4", "title": "...", "description": "..."}
+     ]
+   }
+   ```
+   **注意：卡片不含 href，是纯展示文案，不链接文章页面。**
+
+   **选文规则（4 张卡片怎么选）**：
+   - 卡片 1 固定为「新手入门」类（Beginner Guide / Getting Started）
+   - 卡片 2-4 从以下类型中选 3 个最贴合该游戏的：
+     - **升级/经验**（Fastest Leveling / XP Guide）
+     - **刷资源/农场**（Best Farming Spots / Resource Guide）
+     - **角色/职业选择**（Best Class / Which Race to Pick）
+     - **兑换码**（All Codes / How to Redeem）
+     - **进阶机制**（How to Evolve / Skill Tree Guide / Crafting Guide）
+     - **Boss/战斗**（First Boss Guide / Combat Basics）
+   - 选取标准：网上能搜到攻略、是该游戏前 2 小时玩家最常搜的内容
+
+2. **`home.aboutGame`**（What is... 游戏介绍区）—— title、2 段文字、数据卡片数组：
+   ```json
+   "aboutGame": {
+     "title": "What is {GAME_NAME}?",
+     "paragraphs": ["第一段：游戏类型和核心玩法介绍", "第二段：进一步说明特色"],
+     "stats": [
+       {"label": "Developer", "value": "工作室名"},
+       {"label": "Platform", "value": "Roblox / Steam 等"},
+       {"label": "Genre", "value": "..."},
+       {"label": "Visits", "value": "12.6M+"},
+       {"label": "...", "value": "..."}
+     ],
+     "cta": "Explore All Guides"
+   }
+   ```
+   数据来源：1.1 基础信息采集中的 `home.aboutGame` 块。
+
+3. **`home.explore.modules`**（全部 8 个模块）—— 每个模块含 highlights 数组：
+   ```json
+   {"order": 1, "name": "{GAME_NAME} Codes", "description": "...", "href": "/codes", "displayType": "code-cards",
+    "highlights": [{"label": "day1", "detail": "...", "badge": "Active"}]}
+   ```
+   数据来源：`00首页模块.md`（8 个模块完整数据）。
+
+4. **`home.faq`**（FAQ 手风琴）—— title、description、items 数组：
+   ```json
+   "faq": {
+     "title": "Frequently Asked Questions",
+     "description": "Quick answers to the most common questions about {GAME_NAME}.",
+     "items": [
+       {"question": "What is {GAME_NAME}?", "answer": "..."},
+       {"question": "Which race/class should beginners pick?", "answer": "..."},
+       {"question": "...", "answer": "..."}
+     ]
+   }
+   ```
+   数据来源：1.1 基础信息采集中的 `home.faq` 块。faq 问答中必须包含主题名。
+
+**⚠️ 硬性要求 0：替换旧主题词 key**
+所有模块的 JSON key 和文案中必须替换为新主题词。
+
+**⚠️ 硬性要求 1：模块级标题必须包含主题名（SEO），子项不需要**
+每个**模块标题**（`home.explore.modules[].name`）采用「主题名 + 功能词」形式，如 "anime vanguards"。
+**子项文案不需要强制包含主题名**，自然提及即可。
+
+**⚠️ 硬性要求 2：保留 displayType 渲染分支**
+模块预览区使用 4 种 displayType（code-cards / step-by-step / tier-grid / card-list）渲染。保留这些分支，只更新数据内容。
+
+**图标/文字的颜色使用全局配置文件主题色一致，禁止代码硬编码**
+**采用lucide-react，禁止emoji。**
+
+**⚠️ 硬性要求 3：card-list 模块的 highlights.label 必须"去 emoji 化"**
+需求文件（`00首页模块.md`，第5课采集格式）中 `card-list` 类型模块的 `highlights.label` 默认是 emoji（如 ⛵🗡️🏹🛡️）。但 `HomePageClient` 的 card-list 渲染分支直接把 label 当纯文本输出（`<span className="text-xl">{h.label}</span>`），保留 emoji 会违反"禁止 emoji"规则，也无法套用 lucide 图标。处理方式：**把 card-list 的 `highlights.label` 从 emoji 替换为简短英文文字标签**（首字母大写短词，如 `Ketch`/`Brigantine`/`Fencer`/`Boss`），`detail` 文本保留不变；**不要改 `HomePageClient.tsx` 组件代码**。`step-by-step`（label 是数字 1-6）和 `tier-grid`（label 是 S/A/B/C）的 label 保留原样。
+
+**禁止翻译，只更新英文翻译文件**
+**禁止文案中出现可信度或信息可能不准确等描述**
+**faq模块问答中必须包含主题名**
+
+更新相关文件：
+./src/locales/en.json
+
+## 验证方法
+
+```bash
+# 验证没有旧主题词
+grep -i "VV Ultimatum" ./src/locales/en.json
+# 应该没有结果
+
+# 验证模块级标题包含主题名
+grep -E '"name".*".*"' ./src/locales/en.json | grep -v "Anime Vanguards"
+# home.explore.modules 中的 name 字段应该都包含主题名
+
+# 验证 JSON 合法性
+python3 -c "import json; json.load(open('./src/locales/en.json'))"
+```

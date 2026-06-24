@@ -1,0 +1,74 @@
+# 部分 2：元数据和 SEO
+
+参考：./doc/00基础信息.md youtube视频
+更新首页youtube视频ID（`src/app/[locale]/HomePageClient.tsx` 第 19 行的 `YOUTUBE_VIDEO_ID` 常量）
+不要只改 videoId；必须同时检查并替换 TrailerButton/TrailerCard 的封面图（`public/images/` 下的缩略图），禁止残留旧游戏封面
+首页视频模块必须位于 Hero 区域正下方（TrailerButton 在 Hero 标题之后渲染）
+必须验证该视频真实可播放，不能只看到封面和播放按钮就算完成
+优先选择 gameplay / tutorial / showcase 类视频，避免 codes 聚合、搬运、短时效资讯类视频
+
+参考：./doc/00基础信息.md 主题信息和4组用户关心的数据
+更新相关文件：首页hero部分文案
+首页hero大标题：主题名+wiki
+更新相关文件：
+./src/locales/en.json
+
+⚠️ 本步骤仅更新 en.json 中的以下 key：`home.hero`、`home.finalCta`、`footer`，以及站点级品牌字段 `site`（name/shortName/description/tagline/legalNotice——全站 JSON-LD、og:site_name、footer 法律声明都引用它们，必须一并换成新游戏，别只改 hero/footer 留下 VV 旧站名）
+**不要修改** navigation config（`nav`）、首页内容模块（`home.explore`、`home.updates`、`home.start`、`home.popular`、`home.aboutGame`、`home.faq`）或其他 section
+
+参考：./doc/00基础信息.md里面的游戏名称和域名
+修改法律页面（隐私政策、服务条款、版权、关于）的内容
+更新相关文件：
+./src/app/[locale]/privacy-policy/page.tsx
+./src/app/[locale]/terms-of-service/page.tsx
+./src/app/[locale]/copyright/page.tsx
+./src/app/[locale]/about/page.tsx
+
+检查并更新seo内容：
+⚠️ 旧模板的站点域名回退值常散落在多个文件且不统一（如 robots.ts/sitemap.ts 用 `.net`、layout/page 用 `.sbs`），必须 grep 出所有旧域名一次性统一替换为 anime-vanguards-wiki.wiki，别只改一处。
+1）robots.ts - 正确使用 `NEXT_PUBLIC_SITE_URL` 环境变量，回退值使用 anime-vanguards-wiki.wiki
+2）sitemap.ts - 正确使用 `NEXT_PUBLIC_SITE_URL`，staticPaths 列表与 CONTENT_TYPES 匹配
+3）layout.tsx（`src/app/[locale]/layout.tsx`）- 默认 title 使用 "anime vanguards Wiki"，Organization JSON-LD 的 name/url/logo/image 正确
+4）`src/app/[locale]/[...slug]/page.tsx` - 文章页和列表页的内联 JSON-LD 正确（Article + BreadcrumbList / ItemList）
+5）首页结构化数据正确（`src/app/[locale]/page.tsx` 的 WebSite JSON-LD）
+6）确保 layout.tsx 同时输出 og:image、twitter:image、summary_large_image
+
+参考：./doc/00基础信息.md 游戏平台、官网链接和社群信息
+更新 CTA 按钮文案和外部链接（en.json 的 `home.finalCta.primary/secondary` + `home.hero.primaryCta/secondaryCta/tertiaryCta`，以及 `HomePageClient.tsx` 中 CTA 的 href 链接）。
+⚠️ HomePageClient 里所有含旧游戏 slug 的硬编码 href 都要替换——不止 hero 三按钮和 finalCta 两按钮，还包括 home.aboutGame 的 cta 按钮（如 `/guide/vv-ultimatum-beginner-guide-2026`）。用 grep 把所有旧 slug 一次性找出来换掉。
+确保所有CTA 按钮文案正确显示游戏平台（Steam/Roblox/PS5/Epic Games 等）
+检查页面所有外部链接是否都指向新游戏
+
+参考：./doc/00基础信息.md的社群链接信息
+更新页面底部 Footer（`src/components/site.tsx` 的 SiteFooter）的所有社交媒体链接文案和具体外部链接。
+Footer 链接标签使用翻译键（`footer.playGame`、`footer.officialDiscord`、`footer.officialYoutube`、`footer.vvBuilder` 等），同时更新 en.json `footer` 部分的对应值。
+确保所有社交媒体链接指向新游戏的官方账号
+
+⚠️ 侧边栏硬编码兑换码（site.tsx 的 WikiSidebar 组件）：
+侧边栏（每页右侧/移动端折叠）中有一个"Active Codes"小卡片，当前硬编码了旧游戏的兑换码（如 `FULLRELEASE`、`75KLIKES`）及奖励描述。
+必须替换为新游戏的实际兑换码。如果新游戏暂时没有兑换码，把两个码卡片都替换为"暂无兑换码"占位文案。
+更新 ./src/components/site.tsx（WikiSidebar 函数中的 `<code>` 和 `<p>` 标签内容）
+
+## 验证方法
+
+```bash
+# 验证没有旧主题引用
+rg -n "VV Ultimatum" ./src/app/ ./src/components/ ./src/locales/
+
+# 验证新主题名称
+grep "anime vanguards" ./src/app/[locale]/layout.tsx
+
+# 对比"需求文档链接集合"与"页面实际链接集合"
+REQ_LINKS=$(mktemp)
+CODE_LINKS=$(mktemp)
+rg -No "https?://[^\"' )]+" ./doc/00基础信息.md | sort -u > "$REQ_LINKS"
+rg -No "https?://[^\"' )]+" ./src/app/[locale]/page.tsx ./src/locales/en.json 2>/dev/null | sort -u > "$CODE_LINKS"
+echo "[仅代码中存在的链接]"; comm -23 "$CODE_LINKS" "$REQ_LINKS"
+echo "[仅需求中存在的链接]"; comm -13 "$CODE_LINKS" "$REQ_LINKS"
+
+# 验证 Organization JSON-LD 必填字段（在 layout.tsx 中）
+rg -n "\"@type\"\s*:\s*\"Organization\"|\"logo\"\s*:|\"image\"\s*:" ./src/app/[locale]/layout.tsx
+
+# 验证首页输出 og:image / twitter:image / summary_large_image（在 layout.tsx 中）
+rg -n "openGraph|twitter|images|summary_large_image" ./src/app/[locale]/layout.tsx
+```

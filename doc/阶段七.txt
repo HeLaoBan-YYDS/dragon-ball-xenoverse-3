@@ -1,0 +1,44 @@
+# 部分 7：Sitemap URL 检查与自动修复
+
+**前提条件**：所有前序 part 已完成。有 git remote 的项目需构建成功 + 容器重部署；**无 git remote 的本地开发项目**只需 dev server 运行（`localhost:${DEV_PORT}`，默认 3000），用步骤 1 的 dev server 回退分支作为 BASE_URL，不能拿未部署的 、anime vanguards 去检查（否则所有 URL 误报失败）。
+
+## 步骤 1：等待部署就绪
+
+优先通过 Docker 容器直连，绕过 Cloudflare/DNS 依赖：
+
+```bash
+CONTAINER_IP=$(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' "$CONTAINER_NAME" 2>/dev/null)
+if [ -n "$CONTAINER_IP" ]; then
+  BASE_URL="http://${CONTAINER_IP}:3000"
+elif curl -sf "http://localhost:${DEV_PORT:-3000}/" >/dev/null 2>&1; then
+  # 无 git remote 的本地开发项目（无容器、无远程部署），直接用 dev server
+  BASE_URL="http://localhost:${DEV_PORT:-3000}"
+else
+  BASE_URL="https://anime vanguards"
+fi
+```
+
+## 步骤 2：检查所有 sitemap URL
+
+逐个 curl 检查，记录所有 500 错误的 URL。
+
+## 步骤 3-7：修复循环
+
+如果没有 500 错误，直接结束。如果有：
+1. 将 500 URL 映射到对应的 MDX 文件
+2. 调用修复脚本自动修复
+3. 提交、推送、等待构建、重部署
+4. 重新验证之前 500 的 URL
+
+## 步骤 8：自愈修复循环（关键步骤）
+
+如果步骤 7 验证后仍有 500，直接读取文件内容诊断根因：
+
+常见 500 原因：
+- **首行残留垃圾 token**（如 `jsx`、`mdx`）
+- **import 路径错误**
+- **JSX 语法错误**（未闭合标签）
+- **metadata JSON 格式错误**
+
+不再调用修复脚本（已试过且失败），直接编辑 MDX 文件。
+持续循环直到所有 500 消失。

@@ -1,0 +1,62 @@
+# 部分 3：多语言和导航
+
+优先根据./doc/00基础文档.md里明确指定的最终语言集合更新站点自身的多语言配置；仅在 `languages.json` 缺失时，才回退参考 `00基础信息.md`。
+
+更新相关文件（两个文件的语言列表必须完全一致，加上实际存在的 JSON 文件 = 三处同步）：
+./src/i18n/routing.ts 的 locales 数组
+./src/i18n/request.ts 的 import 语句和 messagesMap 对象
+（content.ts 无需修改——它从 routing.ts 导入 routing.locales，不维护独立的语言列表）
+
+先清除旧的非英文 locale 文件，再只按最终语言集合重建空文件：
+
+```bash
+find ./src/locales -maxdepth 1 -type f -name '*.json' ! -name 'en.json' -delete
+
+# 注意：routing.ts 的 locales 用双引号（如 "de"），若用单引号 grep 会静默匹配不到、导致空文件不生成。
+# 这里先定位 locales: 那一行，再从中提取双引号语言码，避免误匹配 localePrefix 等其他字段。
+for lang in $(grep -E 'locales:' ./src/i18n/routing.ts | grep -oE '"[a-z-]+"' | tr -d '"' | grep -v '^en$'); do
+  printf '{}\n' > "./src/locales/${lang}.json"
+done
+# 验证：执行后 ls src/locales/ 应同时看到 en.json 和各非 en 语言文件，且每个非 en 文件大小为 3 字节（{}）
+```
+
+清理旧内容文件（模板残留，⚠️ 删 mdx 不删目录）：
+
+```bash
+# ⚠️ 严禁 rm -rf content/！content.ts 用 webpack 动态 import(`../../content/${lang}/${type}/${slug}.mdx`)
+# 加载 MDX。webpack 在【编译时】（不是运行时）把这种模板字符串解析成 ContextModule，必须能找到
+# content/ 这个基础目录——哪怕目录是空的也能编译通过。一旦删掉整个 content/，webpack 编译时报
+# Module not found: '../../content'，content.ts 模块加载失败，所有页面 HTTP 500。
+# 正确做法：只删 .mdx 文件，保留空 content/ 目录（CONTENT_TYPES=[] 时运行时根本不会触发 import）。
+find ./content -name '*.mdx' -delete
+# 若 content/ 本就不存在（极少见），补一个空目录占位，保证 webpack 能解析：
+mkdir -p ./content/en
+```
+
+清空导航配置：
+./src/config/navigation.ts - NAVIGATION_CONFIG 数组设为空 []（BOSS_LINKS 和 WIKI_NAVIGATION 如存在也清空）
+./src/locales/en.json - "nav" 对象设为空 {}；内容类型专属的顶级 key（如 "bosses"）也清空为 {}
+⚠️ 注意：site.tsx 的 SiteHeader 可能引用 nav 命名空间下的 UI 框架键（如 nav.toggleTheme、nav.menu、nav.home）。清空 nav={} 后这些键缺失，next-intl 会回退显示键名（不崩溃但有 UI 瑕疵）。若该模板 header 依赖这些键，可只清内容型导航键（races/bosses/guides 等）、保留 toggleTheme/menu/home 等框架键；或本阶段一并清空、留待后续阶段重建 nav 时恢复。
+
+**⚠️ 本阶段只允许修改以下文件，其他文件一律不得改动：**
+- `./src/i18n/routing.ts`
+- `./src/i18n/request.ts`
+- `./src/config/navigation.ts`
+- `./src/locales/en.json`（仅清空 `"nav"` 和内容类型专属顶级 key 如 `"bosses"` 等，禁止修改其他键）
+
+**禁止修改：** `src/app/page.tsx`、`src/app/layout.tsx` 等前端页面文件。
+
+## 验证方法
+
+```bash
+# 验证 content 下无 .mdx 残留，且 content/ 目录本身仍在（删 mdx，不删目录）
+find ./content -name '*.mdx' | wc -l   # 应为 0
+ls -d ./content   # 目录应仍然存在——删了会导致全站 500
+
+# 验证语言配置
+grep "locales" ./src/i18n/routing.ts
+
+# 验证导航清空
+grep -nE "NAVIGATION_CONFIG|CONTENT_TYPES" ./src/config/navigation.ts
+# 应该看到 NAVIGATION_CONFIG = []（注意变量名是 NAVIGATION_CONFIG，不是小写 navigation；原模板的 grep 写法匹配不到任何东西）
+```

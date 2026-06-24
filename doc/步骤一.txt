@@ -1,0 +1,55 @@
+# 部分 1：基础配置与首页媒体替换
+
+参考 `./doc/00基础信息.md` 的主题色，只更新 `./src/app/globals.css` 中 `--nav-theme` 和 `--nav-theme-light` 的值，共 4 行：
+- `:root` 下亮色 2 行
+- `.dark` 下暗色 2 行
+不要修改 `--primary`、`--accent`、`--ring` 等其他变量。
+
+参考 `./doc/favicon_io/` 下的图标，复制/覆盖到 `./public/`。
+修改 `./public/manifest.json`，补充完整 PWA 信息，并改成新游戏名称、描述、主题色、图标信息。
+
+参考 `./doc/00基础信息.md` 里的 hero 图片下载链接，或从官方来源下载新游戏相关 hero 图片：
+- `./public/images/hero.webp` 即使已存在也必须检查，若是 0 字节或旧游戏图片，必须覆盖。
+- 下载 YouTube 缩略图时优先试 `maxresdefault`，确认是 1280×720 真图；若是低清占位图再降级。
+- 转换 hero 为真实 WebP。
+- 同步替换首页视频预览封面，不允许保留旧游戏封面。
+
+更新文件：
+- `./public/images/hero.webp`
+- `./src/app/[locale]/HomePageClient.tsx`
+- `./src/components/site.tsx`
+
+首页视频要求：
+- `YOUTUBE_VIDEO_ID` 必须替换为新游戏相关的官方或高质量 gameplay / tutorial / showcase 视频。
+- 视频模块必须紧跟 Hero 区域之后，不要放到 Tools / Updates / FAQ 等更靠后的 section。
+- 桌面端视频预览不能过窄，实际展示宽度要检查。
+- 视频预览图必须与新游戏主题一致。
+
+导航栏左上角要求：
+- `SiteHeader` 中必须显示真实图标图片，不允许用文字占位，例如 `AV`、`VV`、游戏首字母。
+- 图标优先使用 `public/android-chrome-192x192.png` 或 favicon 资源。
+- 旁边文字显示新游戏名称。
+
+视频组件要求：
+- `TrailerCard` 的 `alt` 文本必须改成新游戏名。
+- 视频封面引用必须指向新游戏 hero/thumbnail，不允许旧游戏默认图。
+- `TrailerDialog` 关闭时必须停止视频声音：
+  - 关闭按钮、点击遮罩、按 Esc 都必须走同一个关闭逻辑。
+  - 关闭逻辑必须先清空 iframe `src`，例如 `iframe.src = ""`，再关闭 dialog。
+  - 关闭按钮必须可点击，不能被侧栏或其他元素遮挡；建议放在视频框内部右上角并设置足够的 `z-index`。
+
+必须验证：
+
+```bash
+# 验证主题色
+grep "nav-theme" ./src/app/globals.css
+
+# 验证无硬编码旧红色残留
+grep -rn "bg-red-\|text-red-\|rgba(220,38,38" ./src/
+
+# 验证 favicon 文件
+ls -la ./public/favicon*
+
+# 验证 Hero 图片
+ls -la ./public/images/hero.webp
+file ./public/images/hero.webp

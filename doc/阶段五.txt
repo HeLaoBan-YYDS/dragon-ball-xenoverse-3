@@ -1,0 +1,56 @@
+# 部分 5：文章与导航
+
+## G1. 拉取文章到项目
+
+将生成的文章复制到项目 content 目录；homepage-only 模式下允许文章目录不存在或为空：
+
+要求：
+- 文章目录不存在或为空时，不报错、不创建假文章、不终止流程
+- 缺文章时仍必须继续执行 G2/G3
+
+## G2. 更新导航页和导航栏的分类名称
+
+**参照（分类真相源）：** 导航分类来自 `./doc/keywords.json`（长尾关键词挖掘产物）的 `categories` 数组——每个 `{category, keywords[]}` 元素的 `category` 字段就是分类 slug（如 `guide` / `ships` / `builds` / `mods`）。**不要照搬 `00基础信息.md` 的"内容站导航栏分类"建议**——那只是采集期 ChatGPT 给的参考，与实际按关键词聚类生成的文章目录往往不一致。分类 slug 必须与 `D:\code\seoscout\output\anime_vanguards/articles/<lang>/` 下的文章子目录名一一对应（G1 复制进 `content/<lang>/` 后，这些子目录就是分类，也是 `navigation.ts` 的 key、`content.ts` 的 GROUP_TITLES slug）。
+
+**⚠️ nav 值命名规则（强制）：**
+- nav 值必须是 category key 的首字母大写形式，只允许单个英文单词
+- 固定词组允许两个词：`"tierList": "Tier List"`
+- 禁止自行扩写成多词描述
+
+**⚠️ 强制约束：分类 key 必须在多处完全一致**
+- `navigation.ts` 的所有 `key` 值（`NAVIGATION_CONFIG` 数组）
+- `en.json` 的 `nav` 对象必须包含且仅包含这些 key
+- `en.json` 需为每个 `isCo
+ntentType: true` 的分类添加顶级 key（如 `"bosses"`），包含 `overviewTitle` 和 `overviewDescription`
+- `content.ts` 的 `GROUP_TITLES` 和 `GROUP_ORDER` 需与 `NAVIGATION_CONFIG` 的分类 slug 对应（`GROUP_TITLES` 是 slug → 人类可读标题的映射）
+- `content.ts` 的 `GROUP_TITLES_BY_LOCALE` 和 `OVERVIEW_LABEL_BY_LOCALE` 如需多语言侧边栏标题，也在此步更新
+
+**⚠️ 导航栏文章排序规则**
+- Wiki Navigation 侧边栏：由 `content.ts` 的 `getDynamicNavigation()` 动态扫描 MDX 文件生成，按 `GROUP_ORDER` 排序
+- 首页 `Recent Updates`：按文章 date/lastModified 降序
+
+## G3. 更新英文导航页文案和分组标题
+
+确保：
+- 每个内容类型在 en.json 中有顶级 key（如 `"bosses": { "overviewTitle": "...", "overviewDescription": "..." }`）
+- `content.ts` 的 `GROUP_TITLES` 映射与内容类型 slug 对应
+- `sitemap.ts` 的 `staticPaths` 列表包含所有内容类型的列表页路径
+
+## 验证方法
+
+```bash
+# 检查导航页无占位符残留
+grep -rn "placeholder\|TODO\|FIXME\|xxx" ./src/locales/en.json
+
+# 验证每个内容类型都有 overviewTitle
+for ct in $(grep -oP 'isContentType: true' ./src/config/navigation.ts -B1 | grep key | grep -oP '"[^"]+"' | tr -d '"'); do
+  echo -n "$ct: "
+  grep -c "overviewTitle" ./src/locales/en.json | head -1
+done
+
+# 验证 sitemap staticPaths 包含所有内容类型
+grep "staticPaths" ./src/app/sitemap.ts
+
+# 验证 GROUP_TITLES 映射完整
+grep "GROUP_TITLES" ./src/lib/content.ts
+```
