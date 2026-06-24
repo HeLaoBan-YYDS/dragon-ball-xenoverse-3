@@ -1,6 +1,6 @@
 # 部分 7：Sitemap URL 检查与自动修复
 
-**前提条件**：所有前序 part 已完成。有 git remote 的项目需构建成功 + 容器重部署；**无 git remote 的本地开发项目**只需 dev server 运行（`localhost:${DEV_PORT}`，默认 3000），用步骤 1 的 dev server 回退分支作为 BASE_URL，不能拿未部署的 、anime vanguards 去检查（否则所有 URL 误报失败）。
+**前提条件**：所有前序 part 已完成。有 git remote 的项目需构建成功 + 容器重部署；**无 git remote 的本地开发项目**只需 dev server 运行（`localhost:${DEV_PORT}`，默认 3000），用步骤 1 的 dev server 回退分支作为 BASE_URL，不能拿未部署的 、dragon-ball-xenoverse-3.wiki 去检查（否则所有 URL 误报失败）。
 
 ## 步骤 1：等待部署就绪
 
@@ -14,7 +14,7 @@ elif curl -sf "http://localhost:${DEV_PORT:-3000}/" >/dev/null 2>&1; then
   # 无 git remote 的本地开发项目（无容器、无远程部署），直接用 dev server
   BASE_URL="http://localhost:${DEV_PORT:-3000}"
 else
-  BASE_URL="https://anime vanguards"
+  BASE_URL="https://dragon-ball-xenoverse-3.wiki"
 fi
 ```
 

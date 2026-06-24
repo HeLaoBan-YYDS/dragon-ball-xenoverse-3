@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bea6a923-81f0-4487-95c6-51fed8751e13" name="Changes" comment="阶段五">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/en/features/dragon-ball-xenoverse-3-crossplay.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/content/en/features/dragon-ball-xenoverse-3-crossplay.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/en/media/dragon-ball-xenoverse-3-demo.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/content/en/media/dragon-ball-xenoverse-3-demo.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[locale]/[...slug]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/[...slug]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[locale]/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[locale]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/sitemap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/sitemap.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/site.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/site.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/i18n/routing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n/routing.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locales/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locales/es.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/es.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locales/fr.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/fr.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locales/ja.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/ja.json" afterDir="false" />
+    <list default="true" id="bea6a923-81f0-4487-95c6-51fed8751e13" name="Changes" comment="阶段六">
+      <change beforePath="$PROJECT_DIR$/doc/阶段七.txt" beforeDir="false" afterPath="$PROJECT_DIR$/doc/阶段七.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +51,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
     "ts.external.directory.path": "D:\\code\\dragon-ball-xenoverse-3\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -71,6 +60,23 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\code\dragon-ball-xenoverse-3\doc" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -89,7 +95,7 @@
       <option name="presentableId" value="Default" />
       <updated>1782181932330</updated>
       <workItem from="1782181933450" duration="2000" />
-      <workItem from="1782281089492" duration="7469000" />
+      <workItem from="1782281089492" duration="8259000" />
     </task>
     <task id="LOCAL-00001" summary="初始化步骤">
       <option name="closed" value="true" />
@@ -155,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782290123425</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="阶段六">
+      <option name="closed" value="true" />
+      <created>1782292171469</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1782292171469</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +183,7 @@
     <MESSAGE value="阶段三" />
     <MESSAGE value="阶段四" />
     <MESSAGE value="阶段五" />
-    <option name="LAST_COMMIT_MESSAGE" value="阶段五" />
+    <MESSAGE value="阶段六" />
+    <option name="LAST_COMMIT_MESSAGE" value="阶段六" />
   </component>
 </project>
