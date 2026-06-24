@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import GithubSlugger from "github-slugger";
 import { CONTENT_TYPES as CONFIG_CONTENT_TYPES } from "@/config/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 
