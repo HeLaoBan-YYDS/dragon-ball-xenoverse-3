@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bea6a923-81f0-4487-95c6-51fed8751e13" name="Changes" comment="阶段七">
+    <list default="true" id="bea6a923-81f0-4487-95c6-51fed8751e13" name="Changes" comment="SEO监测">
       <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/table-of-contents.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/table-of-contents.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/content.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/content.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +23,7 @@
 }]]></component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
-    "url": "https://github.com/libin257/vvultimatum_sbs.git",
+    "url": "https://github.com/HeLaoBan-YYDS/dragon-ball-xenoverse-3.git",
     "accountId": "0eba093a-f2da-45d3-8e7c-d58b4e47d42b"
   }
 }]]></component>
@@ -45,6 +42,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JavaScript Debug.seo-audit-report.html.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
@@ -98,7 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1782181932330</updated>
       <workItem from="1782181933450" duration="2000" />
-      <workItem from="1782281089492" duration="9562000" />
+      <workItem from="1782281089492" duration="10938000" />
     </task>
     <task id="LOCAL-00001" summary="初始化步骤">
       <option name="closed" value="true" />
@@ -180,7 +178,23 @@
       <option name="project" value="LOCAL" />
       <updated>1782292947153</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="SEO监测">
+      <option name="closed" value="true" />
+      <created>1782295779355</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1782295779355</updated>
+    </task>
+    <task id="LOCAL-00012" summary="SEO监测">
+      <option name="closed" value="true" />
+      <created>1782296712419</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1782296712419</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +210,7 @@
     <MESSAGE value="阶段五" />
     <MESSAGE value="阶段六" />
     <MESSAGE value="阶段七" />
-    <option name="LAST_COMMIT_MESSAGE" value="阶段七" />
+    <MESSAGE value="SEO监测" />
+    <option name="LAST_COMMIT_MESSAGE" value="SEO监测" />
   </component>
 </project>

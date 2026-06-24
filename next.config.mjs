@@ -17,6 +17,16 @@ const nextConfig = {
   output: "standalone",
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
   allowedDevOrigins: ["*.preview.same-app.com"],
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.dragon-ball-xenoverse-3.wiki" }],
+        destination: "https://dragon-ball-xenoverse-3.wiki/:path*",
+        permanent: true,
+      },
+    ];
+  },
   images: {
     unoptimized: true,
     remotePatterns: [
