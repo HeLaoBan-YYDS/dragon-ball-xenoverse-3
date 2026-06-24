@@ -35,27 +35,27 @@
     },
     "start": {
       "eyebrow": "Start Here",
-      "title": "Your VV Ultimatum Journey",
+      "title": "Your Dragon Ball Xenoverse 3 Journey",
       "cards": [
         {
           "number": "1",
           "title": "Beginner Guide",
-          "description": "Master the Spirit World from day one with our comprehensive beginner guide covering controls, combat, and early progression."
+          "description": "A complete starter guide covering what Xenoverse 3 is, how the new setting works, and what official systems matter most before launch."
         },
         {
           "number": "2",
-          "title": "Fastest Leveling",
-          "description": "Dominate early game and max your progression with the most efficient leveling routes and strategies."
+          "title": "Races and Character Creation",
+          "description": "Break down the confirmed race-driven playstyle differences and help players choose the hero fantasy they want to build first."
         },
         {
           "number": "3",
-          "title": "Best Farming Spots",
-          "description": "Maximize your Soul Essence and EXP gains with optimal farming locations for every stage."
+          "title": "Soul Assist and Soul Switch",
+          "description": "Explain the two newly revealed combat systems, when to use them, and how they change fights compared with older Xenoverse games."
         },
         {
           "number": "4",
-          "title": "How to Extract",
-          "description": "Learn the best methods and locations for extracting resources in VV Ultimatum."
+          "title": "West City Story Primer",
+          "description": "Introduce AGE 1000, the Great Saiya Squad setup, and the new cast so players can understand the world before launch."
         }
       ]
     },
@@ -63,328 +63,308 @@
       "eyebrow": "Popular Pages",
       "title": "Trending Now",
       "quickLinks": [
-        "Hollow Progression",
-        "Fastest Leveling",
-        "Spirit Charms",
-        "All Boss Guides"
+        "Release Date",
+        "West City",
+        "Race Choices",
+        "Soul Systems"
       ],
       "cards": [
         {
-          "badge": "Beginner",
+          "badge": "Start Here",
           "title": "Beginner Guide",
-          "description": "Everything you need from your first login to mastering the basics of combat and progression.",
+          "description": "Understand Dragon Ball Xenoverse 3, AGE 1000 West City, created heroes, race choices, and the launch-prep path.",
           "href": "/beginner-guide"
         },
         {
           "badge": "Updated",
-          "title": "Active Codes",
-          "description": "All working codes with rewards redeem before they expire.",
-          "href": "/codes"
+          "title": "Release Date",
+          "description": "Track the 2027 launch window, supported platforms, developer, publisher, and official store listings.",
+          "href": "/release-date"
         },
         {
-          "badge": "Updated",
-          "title": "Equipment Database",
-          "description": "94 items across 5 slots complete gear database with stats, rarity, and sources.",
-          "href": "/equipment"
+          "badge": "Official",
+          "title": "Trailers",
+          "description": "Review the announcement trailer and Welcome to West City gameplay reveal with the key systems they introduced.",
+          "href": "/trailers"
         },
         {
-          "badge": "Popular",
-          "title": "Which Race Should You Pick?",
-          "description": "Shinigami, Quincy, or Hollow compare all three and find your perfect playstyle.",
-          "href": "/races/best-race"
+          "badge": "Guide",
+          "title": "Gameplay Systems",
+          "description": "Learn how high-speed combat, aerial movement, Ki Attacks, Soul Assist, and Soul Switch shape battles.",
+          "href": "/gameplay"
         },
         {
-          "badge": "New",
-          "title": "Enemies & Monsters",
-          "description": "23 enemy types across 5 regions drops, locations, and farming tips.",
-          "href": "/enemies"
+          "badge": "Story",
+          "title": "West City Story",
+          "description": "Explore AGE 1000, the Great Saiya Squad, West City University, and the new original cast.",
+          "href": "/story"
         },
         {
-          "badge": "Popular",
-          "title": "Boss Locations & Drops",
-          "description": "Every boss location, drop table, and respawn timer in one reference.",
-          "href": "/boss-locations-drops-respawn-times"
-        },
-        {
-          "badge": "Popular",
-          "title": "Best Builds",
-          "description": "Optimal stat allocation, skill tree picks, and Charm combos for every playstyle.",
-          "href": "/builds/best-builds"
+          "badge": "Guide",
+          "title": "Character Creation",
+          "description": "Compare created-hero basics, race-driven combat options, Saiyan forms, and Earthling playstyle notes.",
+          "href": "/character-creation"
         },
         {
           "badge": "New",
-          "title": "Shikai Tier List",
-          "description": "All 6 Shinigami Shikai types ranked by PvP and PvE performance.",
-          "href": "/tier-list/shikai"
+          "title": "Soul Systems",
+          "description": "Break down Soul Assist team attacks and Soul Switch power-ups shown in official gameplay footage.",
+          "href": "/soul-systems"
         },
         {
-          "badge": "New",
-          "title": "World Events Guide",
-          "description": "Supply Caches, Raids, and endgame world events with rare rewards.",
-          "href": "/world-events"
+          "badge": "Cast",
+          "title": "Characters",
+          "description": "Browse revealed Dragon Ball characters and original heroes including Bulma, Gamma 1, Brett, Lilica, ROM, and Tap.",
+          "href": "/characters"
         }
       ]
     },
     "aboutGame": {
-      "title": "What is VV: ULTIMATUM?",
+      "title": "What is Dragon Ball Xenoverse 3?",
       "paragraphs": [
-        "VV: ULTIMATUM is a stylized fighting RPG on Roblox inspired by the Bleach anime universe. Choose from three playable races Shinigami, Quincy, or Hollow each with unique progression systems, unlockable abilities, and evolution paths. Master over 130 skills as you fight your way to the level 100 cap.",
-        "Whether you're unlocking your first Shikai, evolving from a base Hollow into an Arrancar, or grinding Quincy Lieutenant missions, our wiki covers every system with detailed guides, data tables, and step-by-step walkthroughs."
+        "Dragon Ball Xenoverse 3 is a new story-driven Dragon Ball action-adventure set in AGE 1000, where players create their own hero and explore a future version of West City. It continues the Xenoverse formula with a fresh setting, a new cast, and a stronger focus on role-playing progression.",
+        "Official materials describe high-speed combat, city exploration, and race-dependent battle options. The June 2026 gameplay reveal also confirmed Soul Assist and Soul Switch, two new combat hooks designed to make each fight feel more tactical and more character-driven."
       ],
       "stats": [
         {
           "label": "Developer",
-          "value": "Midnight Continent"
+          "value": "DIMPS"
+        },
+        {
+          "label": "Publisher",
+          "value": "Bandai Namco Entertainment"
         },
         {
           "label": "Platform",
-          "value": "Roblox"
+          "value": "PS5 / Xbox Series X|S / Steam"
         },
         {
           "label": "Genre",
-          "value": "Fighting RPG"
+          "value": "Action / Adventure"
         },
         {
-          "label": "Visits",
-          "value": "12.6M+"
+          "label": "Launch Window",
+          "value": "2027"
         },
         {
-          "label": "Favorites",
-          "value": "243K+"
+          "label": "Setting",
+          "value": "AGE 1000 / West City"
         },
         {
-          "label": "Total Skills",
-          "value": "130+"
-        },
-        {
-          "label": "Level Cap",
-          "value": "100"
+          "label": "Combat Hooks",
+          "value": "Soul Assist / Soul Switch"
         }
       ],
       "cta": "Explore All Guides"
     },
     "explore": {
-      "title": "VV Ultimatum Homepage Modules Navigation",
-      "description": "Jump straight to the eight homepage sections and scroll to the module you need.",
+      "title": "Dragon Ball Xenoverse 3 Guide Modules",
+      "description": "Jump into release details, gameplay systems, characters, trailers, story context, and launch-prep guides for Dragon Ball Xenoverse 3.",
       "modules": [
         {
           "order": 1,
-          "name": "VV Ultimatum Codes",
-          "description": "Redeem the current VV Ultimatum code before spending rerolls so you can test faction ideas with more room to pivot.",
-          "href": "/codes",
-          "displayType": "code-cards",
+          "name": "dragon ball xenoverse 3 Release Date",
+          "description": "Track the release window, supported platforms, developer, and publisher for Dragon Ball Xenoverse 3. Bandai Namco has announced a 2027 launch, while the exact release date remains reserved for official updates.",
+          "href": "/release-date",
+          "displayType": "card-list",
           "highlights": [
             {
-              "label": "day1",
-              "detail": "3× Clan Reroll + Token Booster + Focus Elixir",
-              "badge": "Active"
+              "label": "Release Window",
+              "detail": "Dragon Ball Xenoverse 3 is officially scheduled for release in 2027.",
+              "badge": "Confirmed"
+            },
+            {
+              "label": "Platforms",
+              "detail": "The confirmed platforms are PlayStation 5, Xbox Series X|S, and PC via Steam."
+            },
+            {
+              "label": "Developer",
+              "detail": "Dragon Ball Xenoverse 3 is being developed by Dimps Corporation."
+            },
+            {
+              "label": "Publisher",
+              "detail": "The game is published by Bandai Namco Entertainment."
             }
           ]
         },
         {
           "order": 2,
-          "name": "VV Ultimatum Beginner Guide",
-          "description": "Use the first hour to lock in a faction route, learn the live controls, and push quests instead of burning resources on random rerolls.",
-          "href": "/guide/vv-ultimatum-beginner-guide-2026",
-          "displayType": "step-by-step",
+          "name": "dragon ball xenoverse 3 Gameplay",
+          "description": "Explore the officially revealed combat, movement, and race-based gameplay mechanics. Xenoverse 3 expands the series' high-speed battles with aerial movement, Ki Attacks, Soul Assist, and Soul Switch abilities.",
+          "href": "/gameplay",
+          "displayType": "card-list",
           "highlights": [
             {
-              "label": "1",
-              "detail": "Choose a faction route before spending rerolls"
+              "label": "High-Speed Combat",
+              "detail": "The game continues the Xenoverse series' fast-paced action combat with new ways to fight."
             },
             {
-              "label": "2",
-              "detail": "Finish the opening path and learn the live controls"
+              "label": "Aerial Movement",
+              "detail": "Players can soar through West City and boost across battlefields during combat."
             },
             {
-              "label": "3",
-              "detail": "Redeem the launch code once the Shop unlocks"
+              "label": "Ki Attacks",
+              "detail": "Created heroes can unleash powerful energy-based Ki Attacks against enemies."
             },
             {
-              "label": "4",
-              "detail": "Push story quests before side grinding"
-            },
-            {
-              "label": "5",
-              "detail": "Start mission systems as soon as they open"
-            },
-            {
-              "label": "6",
-              "detail": "Spend early points around one damage plan"
+              "label": "Race Abilities",
+              "detail": "Combat options change depending on the selected race, with Saiyans and Earthlings offering different playstyles.",
+              "badge": "New"
             }
           ]
         },
         {
           "order": 3,
-          "name": "VV Ultimatum Official Links",
-          "description": "Verified destinations worth bookmarking for the real game page, community channels, and official video feed.",
-          "href": "/codes",
+          "name": "dragon ball xenoverse 3 Characters",
+          "description": "Browse the returning Dragon Ball characters and original heroes confirmed for Xenoverse 3. The revealed cast includes Bulma, Gamma 1, and several characters making their franchise debut.",
+          "href": "/characters",
           "displayType": "card-list",
           "highlights": [
             {
-              "label": "🎮",
-              "detail": "VV: ULTIMATUM on Roblox"
+              "label": "Bulma",
+              "detail": "Bulma appears in the West City storyline and helps introduce the player to the new AGE 1000 setting.",
+              "badge": "Confirmed"
             },
             {
-              "label": "💬",
-              "detail": "Official Discord Server"
+              "label": "Gamma 1",
+              "detail": "Gamma 1 welcomes the player-created hero into the Great Saiya Squad.",
+              "badge": "Confirmed"
             },
             {
-              "label": "📺",
-              "detail": "Official YouTube Channel"
+              "label": "Brett",
+              "detail": "Brett is one of the original characters making a debut in Dragon Ball Xenoverse 3.",
+              "badge": "New"
             },
             {
-              "label": "🐦",
-              "detail": "VV Ultimatum on X"
-            },
-            {
-              "label": "🎵",
-              "detail": "VV Ultimatum on TikTok"
-            },
-            {
-              "label": "👥",
-              "detail": "Roblox Community Group"
+              "label": "Lilica, ROM and Tap",
+              "detail": "Lilica, ROM, and Tap are additional original characters confirmed for the new West City adventure.",
+              "badge": "New"
             }
           ]
         },
         {
           "order": 4,
-          "name": "VV Ultimatum Clans Tier List",
-          "description": "Treat Clan Rerolls as route-shaping resources. The best keeps depend on faction identity.",
-          "href": "/tier-list",
-          "displayType": "tier-grid",
+          "name": "dragon ball xenoverse 3 Trailers",
+          "description": "Watch and review the official Xenoverse 3 announcement and gameplay reveals. The trailers introduce AGE 1000, West City, the Great Saiya Squad, character creation, and the new Soul combat mechanics.",
+          "href": "/trailers",
+          "displayType": "card-list",
           "highlights": [
             {
-              "label": "S",
-              "detail": "Kurosaki · Shihoin · Cifer — Do not reroll"
+              "label": "Announcement Trailer",
+              "detail": "The April 2026 reveal officially confirmed Dragon Ball Xenoverse 3, its AGE 1000 setting, and its 2027 release window.",
+              "badge": "Official"
             },
             {
-              "label": "A",
-              "detail": "Eisenhauer · Ishida · Kamamura · Aaroniero — Keep for build"
+              "label": "Welcome to West City",
+              "detail": "The June 23, 2026 trailer presented gameplay, West City University, Gamma 1, Bulma, and the Great Saiya Squad.",
+              "badge": "New"
             },
             {
-              "label": "B",
-              "detail": "Parnkgjas · Hitsugaya · Antenor — Good for leveling"
-            },
-            {
-              "label": "C",
-              "detail": "Schulte · Madarame · Calius — Reroll when affordable"
+              "label": "Combat Reveal",
+              "detail": "The latest footage showed aerial movement, boosting, Ki Attacks, Soul Assist, and Soul Switch mechanics."
             }
           ]
         },
         {
           "order": 5,
-          "name": "VV Ultimatum Skill Tree Tier List",
-          "description": "Builds work best when players choose a clear combat core instead of spreading Skill Points across unrelated routes.",
-          "href": "/skills/vv-ultimatum-best-skills-ranked",
-          "displayType": "tier-grid",
+          "name": "dragon ball xenoverse 3 Character Creation",
+          "description": "Learn what has been shown about creating and developing the protagonist in Xenoverse 3. Players can create their own hero, select a race, and access combat options associated with that race.",
+          "href": "/character-creation",
+          "displayType": "card-list",
           "highlights": [
             {
-              "label": "S",
-              "detail": "Hakuda (melee combos) · Speed (mobility core)"
+              "label": "Custom Hero",
+              "detail": "Players become a protagonist they create rather than controlling only a fixed story character.",
+              "badge": "Confirmed"
             },
             {
-              "label": "A",
-              "detail": "Quincy (bow pressure) · Strength (heavy hits) · Shinigami (Kido control)"
+              "label": "Race Selection",
+              "detail": "The selected race affects the options available during combat."
             },
             {
-              "label": "B",
-              "detail": "Hollow / Arrancar (Cero burst windows)"
+              "label": "Saiyan",
+              "detail": "Saiyan characters can use the power of Super Saiyan in multiple forms."
             },
             {
-              "label": "Utility",
-              "detail": "Sense (target reading) · Misc (universal combat tools)"
+              "label": "Earthling",
+              "detail": "Earthling characters are confirmed to provide a different playstyle from Saiyans."
             }
           ]
         },
         {
           "order": 6,
-          "name": "VV Ultimatum Weapons Tier List",
-          "description": "Weapon choices are tied to race. Quincy get the clearest starter list, while Shinigami focus on Zanpakuto growth.",
-          "href": "/tier-list",
-          "displayType": "tier-grid",
+          "name": "dragon ball xenoverse 3 Beginner Guide",
+          "description": "Follow the current launch-prep path from creating a hero to joining the Great Saiya Squad. This guide organizes the official gameplay information into a beginner-friendly route.",
+          "href": "/beginner-guide",
+          "displayType": "step-by-step",
           "highlights": [
             {
-              "label": "S",
-              "detail": "Sword — Balanced all-rounder, safest Quincy starter"
+              "label": "1",
+              "detail": "Create the protagonist you want to embody in the new Dragon Ball world."
             },
             {
-              "label": "A",
-              "detail": "Spear (long reach) · Longsword (safe range)"
+              "label": "2",
+              "detail": "Choose a race, which determines some of the combat options available to your character."
             },
             {
-              "label": "B",
-              "detail": "Greatsword · Hammer · Club — Heavy or niche pressure"
+              "label": "3",
+              "detail": "Enter AGE 1000 and begin exploring the developed and vibrant West City."
             },
             {
-              "label": "C",
-              "detail": "Rifle · Rapier — Playable but outclassed"
+              "label": "4",
+              "detail": "Join the Great Saiya Squad and fight alongside familiar and original allies."
+            },
+            {
+              "label": "5",
+              "detail": "Use aerial movement, Ki Attacks, Soul Assist, and Soul Switch during battles."
             }
           ]
         },
         {
           "order": 7,
-          "name": "VV Ultimatum Hollow Progression Guide",
-          "description": "Hollow progression rewards patience: rushing mask removal too early can leave the final build weaker than necessary.",
-          "href": "/guide/VV-Ultimatum-bleach",
-          "displayType": "step-by-step",
+          "name": "dragon ball xenoverse 3 Story",
+          "description": "Discover the AGE 1000 storyline and the role of the Great Saiya Squad. The game moves beyond the previous setting into a new story-driven Dragon Ball world centered on a developed West City.",
+          "href": "/story",
+          "displayType": "card-list",
           "highlights": [
             {
-              "label": "1",
-              "detail": "Choose a Hollow Type (Gorilla, Lizard, Turtle, Centipede)"
+              "label": "AGE 1000",
+              "detail": "The story takes place in a new future setting officially named AGE 1000."
             },
             {
-              "label": "2",
-              "detail": "Consume Hollows and collect matching traits"
+              "label": "West City",
+              "detail": "West City has developed into a vibrant central hub filled with characters and new stories."
             },
             {
-              "label": "3",
-              "detail": "Advance from base Hollow → Menos → Adjuchas"
+              "label": "Great Saiya Squad",
+              "detail": "The player-created protagonist is recruited into the Great Saiya Squad and fights alongside its allies."
             },
             {
-              "label": "4",
-              "detail": "Push to Vasto Lorde for the 4-trait ceiling"
-            },
-            {
-              "label": "5",
-              "detail": "Remove mask → Become Arrancar or Vastocar"
-            },
-            {
-              "label": "6",
-              "detail": "Meditate and win the Resurrection Fight"
+              "label": "Original World",
+              "detail": "The setting includes unique original characters brought to life by Dragon Ball creator Akira Toriyama."
             }
           ]
         },
         {
           "order": 8,
-          "name": "VV Ultimatum Shinigami Progression Guide",
-          "description": "The Shinigami route is built around steady questing, Soul Pager missions, meditation timing, and the eventual Shikai fight.",
-          "href": "/races/vv-ultimatum-shinigami-guide",
-          "displayType": "step-by-step",
+          "name": "dragon ball xenoverse 3 Soul Systems",
+          "description": "Understand the new Soul Assist and Soul Switch mechanics revealed for Xenoverse 3. These systems let the created hero fight alongside legendary allies or temporarily harness their power.",
+          "href": "/soul-systems",
+          "displayType": "card-list",
           "highlights": [
             {
-              "label": "1",
-              "detail": "Run Main Story Quests to unlock the progression loop"
+              "label": "Soul Assist",
+              "detail": "Soul Assist allows the player to unleash a powerful attack together with an ally from the Dragon Ball universe.",
+              "badge": "New"
             },
             {
-              "label": "2",
-              "detail": "Unlock Soul Society and buy the Soul Pager"
+              "label": "Soul Switch",
+              "detail": "Soul Switch temporarily lets the protagonist harness a Dragon Ball character's soul, gain strength, and access new abilities.",
+              "badge": "New"
             },
             {
-              "label": "3",
-              "detail": "Reach Level 25 and start meditation"
-            },
-            {
-              "label": "4",
-              "detail": "Respond to Spirit Whispers for Shikai EXP"
-            },
-            {
-              "label": "5",
-              "detail": "Solve the Bells Puzzle in the Inner World"
-            },
-            {
-              "label": "6",
-              "detail": "Fight the Shikai NPC and unlock Shikai weapon"
+              "label": "Confirmed Souls",
+              "detail": "Krillin, Piccolo, Vegeta, Future Trunks, and Tien have been shown as Soul Switch examples."
             }
           ]
         }
@@ -392,27 +372,27 @@
     },
     "faq": {
       "title": "Frequently Asked Questions",
-      "description": "Quick answers to the most common questions about VV: ULTIMATUM.",
+      "description": "Quick answers to the most common questions about Dragon Ball Xenoverse 3.",
       "items": [
         {
-          "question": "What is VV: ULTIMATUM?",
-          "answer": "VV: ULTIMATUM is a free-to-play fighting RPG on Roblox based on the Bleach anime. You choose one of three races Shinigami (Soul Reaper), Quincy, or Hollow each with unique progression, combat abilities, and evolution systems. The game features 130+ skills, a level 100 cap, boss fights, and deep build customization."
+          "question": "What is Dragon Ball Xenoverse 3?",
+          "answer": "Dragon Ball Xenoverse 3 is a story-driven Dragon Ball action-adventure where players create a hero, explore AGE 1000 West City, and join the Great Saiya Squad in a new adventure."
         },
         {
-          "question": "Which race should beginners pick?",
-          "answer": "Shinigami is the most straightforward starter race, while Hollow and Quincy offer more specialized progression routes. Compare their abilities before committing."
+          "question": "When does Dragon Ball Xenoverse 3 release?",
+          "answer": "Dragon Ball Xenoverse 3 has a 2027 launch window. The homepage release module tracks the official release date, platform, developer, and publisher details as they are announced."
         },
         {
-          "question": "What is the current level cap?",
-          "answer": "The current level cap is 100, with more than 130 skills available across trees and race progression systems."
+          "question": "What platforms is Dragon Ball Xenoverse 3 coming to?",
+          "answer": "Dragon Ball Xenoverse 3 is listed for PlayStation 5, Xbox Series X|S, and PC via Steam, giving players clear console and PC launch options."
         },
         {
-          "question": "Where do I find active codes?",
-          "answer": "Use the Codes page for working codes, rewards, expiration notes, and redeem instructions."
+          "question": "Which Dragon Ball Xenoverse 3 race should beginners pick?",
+          "answer": "Dragon Ball Xenoverse 3 ties combat options to race choice, so beginners should start with the hero fantasy and playstyle they want before comparing Saiyan, Earthling, and other race systems."
         },
         {
-          "question": "Are boss guides updated?",
-          "answer": "Boss pages are organized with spawn notes, attack patterns, strategies, drop tables, and related next steps for progression."
+          "question": "What are Soul Assist and Soul Switch in Dragon Ball Xenoverse 3?",
+          "answer": "Dragon Ball Xenoverse 3 uses Soul Assist for team attacks with allies and Soul Switch to temporarily draw on a Dragon Ball character soul for extra power and abilities."
         }
       ]
     },
@@ -429,7 +409,7 @@
     "activeCodes": "Active Codes",
     "updated": "Updated",
     "viewAllCodes": "View all codes",
-    "playOnRoblox": "Play on Roblox",
+    "playOnRoblox": "Official Site",
     "inThisSection": "In this section",
     "tableOfContents": "Table of Contents",
     "nextSteps": "Next Steps",

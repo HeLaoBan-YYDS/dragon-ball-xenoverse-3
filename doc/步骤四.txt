@@ -85,7 +85,7 @@
 所有模块的 JSON key 和文案中必须替换为新主题词。
 
 **⚠️ 硬性要求 1：模块级标题必须包含主题名（SEO），子项不需要**
-每个**模块标题**（`home.explore.modules[].name`）采用「主题名 + 功能词」形式，如 "anime vanguards"。
+每个**模块标题**（`home.explore.modules[].name`）采用「主题名 + 功能词」形式，如 "dragon ball xenoverse 3"。
 **子项文案不需要强制包含主题名**，自然提及即可。
 
 **⚠️ 硬性要求 2：保留 displayType 渲染分支**
@@ -112,7 +112,7 @@ grep -i "VV Ultimatum" ./src/locales/en.json
 # 应该没有结果
 
 # 验证模块级标题包含主题名
-grep -E '"name".*".*"' ./src/locales/en.json | grep -v "Anime Vanguards"
+grep -E '"name".*".*"' ./src/locales/en.json | grep -v "dragon ball xenoverse 3"
 # home.explore.modules 中的 name 字段应该都包含主题名
 
 # 验证 JSON 合法性
