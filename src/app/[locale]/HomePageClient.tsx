@@ -15,7 +15,7 @@ type Home = typeof en.home;
 const icons: LucideIcon[] = [BookOpen, Shield, Compass, Boxes, Flame, Code2, Swords, MapIcon, Users, Trophy, Skull, Zap, CircleHelp, ScrollText];
 
 const YOUTUBE_VIDEO_ID = "47I-Xb2bGu0";
-const BEGINNER_GUIDE_HREF = "/guide/dragon-ball-xenoverse-3-beginner-guide";
+const BEGINNER_GUIDE_HREF = "/guide";
 const PLAYSTATION_WISHLIST_HREF = "https://store.playstation.com/concept/10013126";
 const XBOX_WISHLIST_HREF = "https://www.xbox.com/en-US/games/store/dragon-ball-xenoverse-3/9n30klm8jp2s";
 const OFFICIAL_SITE_HREF = "https://www.bandainamcoent.com/games/dragon-ball-xenoverse-3";
@@ -69,7 +69,7 @@ export default function HomePageClient({ home, locale, articles, recentArticles 
             ))}
           </div>
           <Button asChild className="mt-5 w-full" variant="outline">
-            <Link href={localizeHref("/codes", locale)}>{home.updates.browse}</Link>
+            <Link href={localizeHref("/guide", locale)}>{home.updates.browse}</Link>
           </Button>
         </Card>
 

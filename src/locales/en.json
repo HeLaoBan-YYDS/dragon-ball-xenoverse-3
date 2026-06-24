@@ -6,7 +6,16 @@
     "description": "Fan-made Dragon Ball Xenoverse 3 guide hub covering official trailers, PS5, Xbox Series X|S, Steam platform news, West City, races, Soul Assist, and Soul Switch.",
     "legalNotice": "Independent fan-made Dragon Ball Xenoverse 3 wiki. Not affiliated with Bandai Namco, DIMPS, Shueisha, Toei Animation, or Bird Studio."
   },
-  "nav": {},
+  "nav": {
+    "release": "Release",
+    "media": "Media",
+    "guide": "Guide",
+    "customization": "Customization",
+    "characters": "Characters",
+    "platforms": "Platforms",
+    "features": "Features",
+    "community": "Community"
+  },
   "home": {
     "meta": {
       "title": "Dragon Ball Xenoverse 3 Wiki - Release Date, Trailer",
@@ -29,8 +38,8 @@
       "videoLabel": "Official media"
     },
     "updates": {
-      "title": "动态更新",
-      "browse": "Browse All Guides",
+      "title": "Recent Updates",
+      "browse": "Browse Guide Hub",
       "viewAll": "View All"
     },
     "start": {
@@ -165,7 +174,7 @@
           "order": 1,
           "name": "dragon ball xenoverse 3 Release Date",
           "description": "Track the release window, supported platforms, developer, and publisher for Dragon Ball Xenoverse 3. Bandai Namco has announced a 2027 launch, while the exact release date remains reserved for official updates.",
-          "href": "/release-date",
+          "href": "/release/dragon-ball-xenoverse-3-release-date",
           "displayType": "card-list",
           "highlights": [
             {
@@ -191,7 +200,7 @@
           "order": 2,
           "name": "dragon ball xenoverse 3 Gameplay",
           "description": "Explore the officially revealed combat, movement, and race-based gameplay mechanics. Xenoverse 3 expands the series' high-speed battles with aerial movement, Ki Attacks, Soul Assist, and Soul Switch abilities.",
-          "href": "/gameplay",
+          "href": "/guide/dragon-ball-xenoverse-3-game-mechanics",
           "displayType": "card-list",
           "highlights": [
             {
@@ -217,7 +226,7 @@
           "order": 3,
           "name": "dragon ball xenoverse 3 Characters",
           "description": "Browse the returning Dragon Ball characters and original heroes confirmed for Xenoverse 3. The revealed cast includes Bulma, Gamma 1, and several characters making their franchise debut.",
-          "href": "/characters",
+          "href": "/characters/dragon-ball-xenoverse-3-characters",
           "displayType": "card-list",
           "highlights": [
             {
@@ -246,7 +255,7 @@
           "order": 4,
           "name": "dragon ball xenoverse 3 Trailers",
           "description": "Watch and review the official Xenoverse 3 announcement and gameplay reveals. The trailers introduce AGE 1000, West City, the Great Saiya Squad, character creation, and the new Soul combat mechanics.",
-          "href": "/trailers",
+          "href": "/media/dragon-ball-xenoverse-3-trailer",
           "displayType": "card-list",
           "highlights": [
             {
@@ -269,7 +278,7 @@
           "order": 5,
           "name": "dragon ball xenoverse 3 Character Creation",
           "description": "Learn what has been shown about creating and developing the protagonist in Xenoverse 3. Players can create their own hero, select a race, and access combat options associated with that race.",
-          "href": "/character-creation",
+          "href": "/customization/dragon-ball-xenoverse-3-character-creation",
           "displayType": "card-list",
           "highlights": [
             {
@@ -295,7 +304,7 @@
           "order": 6,
           "name": "dragon ball xenoverse 3 Beginner Guide",
           "description": "Follow the current launch-prep path from creating a hero to joining the Great Saiya Squad. This guide organizes the official gameplay information into a beginner-friendly route.",
-          "href": "/beginner-guide",
+          "href": "/guide",
           "displayType": "step-by-step",
           "highlights": [
             {
@@ -324,7 +333,7 @@
           "order": 7,
           "name": "dragon ball xenoverse 3 Story",
           "description": "Discover the AGE 1000 storyline and the role of the Great Saiya Squad. The game moves beyond the previous setting into a new story-driven Dragon Ball world centered on a developed West City.",
-          "href": "/story",
+          "href": "/features/dragon-ball-xenoverse-3-story-mode",
           "displayType": "card-list",
           "highlights": [
             {
@@ -349,7 +358,7 @@
           "order": 8,
           "name": "dragon ball xenoverse 3 Soul Systems",
           "description": "Understand the new Soul Assist and Soul Switch mechanics revealed for Xenoverse 3. These systems let the created hero fight alongside legendary allies or temporarily harness their power.",
-          "href": "/soul-systems",
+          "href": "/features/dragon-ball-xenoverse-3-new-features",
           "displayType": "card-list",
           "highlights": [
             {
@@ -403,12 +412,11 @@
       "secondary": "See PS5, Xbox Series X|S, and Steam Info"
     }
   },
-  "bosses": {},
   "shared": {
     "wikiNavigation": "Wiki Navigation",
-    "activeCodes": "Active Codes",
+    "activeCodes": "Official Links",
     "updated": "Updated",
-    "viewAllCodes": "View all codes",
+    "viewAllCodes": "Open release hub",
     "playOnRoblox": "Official Site",
     "inThisSection": "In this section",
     "tableOfContents": "Table of Contents",
@@ -433,11 +441,46 @@
     "officialDiscord": "DBXV Community Discord via Reddit",
     "officialYoutube": "Bandai Namco Official YouTube",
     "vvBuilder": "Official Dragon Ball Xenoverse 3 News",
-    "beginnerGuide": "Beginner Guide",
+    "beginnerGuide": "Guide Hub",
     "raceGuides": "Race Guides",
     "bossGuides": "Boss Guides",
     "buildGuide": "Build Guide",
     "privacyPolicy": "Privacy Policy",
-    "termsOfService": "Terms of Service"
+    "termsOfService": "Terms of Service",
+    "releaseGuides": "Release Guides",
+    "platformGuides": "Platform Guides",
+    "characterGuides": "Character Guides"
+  },
+  "release": {
+    "overviewTitle": "Dragon Ball Xenoverse 3 Release",
+    "overviewDescription": "Track the 2027 launch window, announcement coverage, price notes, and pre-order status for Dragon Ball Xenoverse 3."
+  },
+  "media": {
+    "overviewTitle": "Dragon Ball Xenoverse 3 Media",
+    "overviewDescription": "Browse trailer breakdowns, previews, demo coverage, news updates, and leak explainers for Dragon Ball Xenoverse 3."
+  },
+  "guide": {
+    "overviewTitle": "Dragon Ball Xenoverse 3 Guide",
+    "overviewDescription": "Read practical guides to battle systems, game mechanics, missions, raid boss battles, and free-roaming lobby details."
+  },
+  "customization": {
+    "overviewTitle": "Dragon Ball Xenoverse 3 Customization",
+    "overviewDescription": "Compare playable races, transformations, character creation, fighting styles, awoken skills, weapon movesets, and Saiyan options."
+  },
+  "characters": {
+    "overviewTitle": "Dragon Ball Xenoverse 3 Characters",
+    "overviewDescription": "Explore character coverage for Goku, Vegeta, the player protagonist, and the wider Dragon Ball Xenoverse 3 roster."
+  },
+  "platforms": {
+    "overviewTitle": "Dragon Ball Xenoverse 3 Platforms",
+    "overviewDescription": "Check platform guides for PS5, PC, Steam, Switch 2 speculation, system requirements, and supported launch platforms."
+  },
+  "features": {
+    "overviewTitle": "Dragon Ball Xenoverse 3 Features",
+    "overviewDescription": "Review expected and confirmed feature coverage, including multiplayer, crossplay, story mode, online play, and new systems."
+  },
+  "community": {
+    "overviewTitle": "Dragon Ball Xenoverse 3 Community",
+    "overviewDescription": "Follow community discussion, wishlist topics, Reddit coverage, and fan expectations around Dragon Ball Xenoverse 3."
   }
 }

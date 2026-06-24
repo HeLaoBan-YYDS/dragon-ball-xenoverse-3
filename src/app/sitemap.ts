@@ -6,7 +6,14 @@ import { routing } from "@/i18n/routing";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://dragon-ball-xenoverse-3.wiki";
 
-  const staticPaths = ["/", ...CONTENT_TYPES.map((contentType) => `/${contentType}`), "/privacy-policy", "/terms-of-service", "/copyright", "/about"];
+  const staticPaths = [
+    "/",
+    ...CONTENT_TYPES.map((contentType) => `/${contentType}`),
+    "/privacy-policy",
+    "/terms-of-service",
+    "/copyright",
+    "/about",
+  ];
 
   // Dynamic paths: scan actual MDX content files
   const contentPaths = await getAllContentPaths("en");
@@ -19,7 +26,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${siteUrl}${locale === "en" ? "" : `/${locale}`}${path === "/" ? "" : path}`,
       lastModified: new Date(),
       changeFrequency: path === "/" ? ("daily" as const) : ("weekly" as const),
-      priority: path === "/" ? 1 : path === "/bosses" ? 0.8 : 0.6,
+      priority: path === "/" ? 1 : CONTENT_TYPES.some((contentType) => path === `/${contentType}`) ? 0.8 : 0.6,
     })),
   );
 }

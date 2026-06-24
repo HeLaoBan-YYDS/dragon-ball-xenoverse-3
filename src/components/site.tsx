@@ -45,34 +45,48 @@ function openTrailerDialog(videoId: string) {
 
 export async function SiteHeader({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "nav" });
-  const header = (
-    <div className="flex items-center justify-between gap-4">
-      <Link href={localizeHref("/", locale)} className="flex min-w-0 items-center gap-3">
-        <img src="/android-chrome-192x192.png" alt="Dragon Ball Xenoverse 3 icon" width={36} height={36} className="h-9 w-9 rounded-xl border border-border bg-muted object-cover" />
-        <span className="truncate text-sm font-bold tracking-wide text-foreground">Dragon Ball Xenoverse 3</span>
-      </Link>
-      <nav className="hidden items-center gap-1 md:flex">
-        {NAVIGATION_CONFIG.map((item) => (
-          <Link key={item.key} href={localizeHref(item.path, locale)} className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground">
-            {t(item.key)}
+  const menuLabel = "Menu";
+  const themeLabel = "Toggle theme";
+
+  return (
+    <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-xl">
+      <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-4">
+          <Link href={localizeHref("/", locale)} className="flex min-w-0 items-center gap-3">
+            <img src="/android-chrome-192x192.png" alt="Dragon Ball Xenoverse 3 icon" width={36} height={36} className="h-9 w-9 rounded-xl border border-border bg-muted object-cover" />
+            <span className="truncate text-sm font-bold tracking-wide text-foreground">Dragon Ball Xenoverse 3</span>
           </Link>
-        ))}
-      </nav>
-      <div className="flex items-center gap-2">
-        <LanguageSwitcher locale={locale} />
-        <ThemeToggle label={t("toggleTheme")} />
-        <Sheet>
-          <SheetTrigger asChild className="md:hidden"><Button variant="outline" size="icon" aria-label={t("menu")}><Menu className="h-4 w-4" /></Button></SheetTrigger>
-          <SheetContent className="border-border bg-background text-foreground">
-            <div className="mt-8 grid gap-2">
-              {NAVIGATION_CONFIG.map((item) => <Link key={item.key} href={localizeHref(item.path, locale)} className="rounded-lg px-3 py-3 text-sm font-semibold hover:bg-muted">{t(item.key)}</Link>)}
-            </div>
-          </SheetContent>
-        </Sheet>
+          <nav className="hidden items-center gap-1 md:flex">
+            {NAVIGATION_CONFIG.map((item) => (
+              <Link key={item.key} href={localizeHref(item.path, locale)} className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground">
+                {t(item.key)}
+              </Link>
+            ))}
+          </nav>
+          <div className="flex items-center gap-2">
+            <LanguageSwitcher locale={locale} />
+            <ThemeToggle label={themeLabel} />
+            <Sheet>
+              <SheetTrigger asChild className="md:hidden">
+                <Button variant="outline" size="icon" aria-label={menuLabel}>
+                  <Menu className="h-4 w-4" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent className="border-border bg-background text-foreground">
+                <div className="mt-8 grid gap-2">
+                  {NAVIGATION_CONFIG.map((item) => (
+                    <Link key={item.key} href={localizeHref(item.path, locale)} className="rounded-lg px-3 py-3 text-sm font-semibold hover:bg-muted">
+                      {t(item.key)}
+                    </Link>
+                  ))}
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
+        </div>
       </div>
-    </div>
+    </header>
   );
-  return <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-xl"><div className="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8">{header}</div></header>;
 }
 
 function ThemeToggle({ label }: { label: string }) {
@@ -80,12 +94,22 @@ function ThemeToggle({ label }: { label: string }) {
 }
 
 export function Breadcrumbs({ items }: { items: { label: string; href?: string }[] }) {
-  return <nav className="mb-7 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">{items.map((item, index) => <span key={`${item.label}-${index}`} className="flex items-center gap-2">{index > 0 && <ChevronRight className="h-4 w-4" />}{item.href ? <Link className="hover:text-foreground" href={item.href}>{item.label}</Link> : <span className="text-foreground">{item.label}</span>}</span>)}</nav>;
+  return (
+    <nav className="mb-7 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+      {items.map((item, index) => (
+        <span key={`${item.label}-${index}`} className="flex items-center gap-2">
+          {index > 0 && <ChevronRight className="h-4 w-4" />}
+          {item.href ? <Link className="hover:text-foreground" href={item.href}>{item.label}</Link> : <span className="text-foreground">{item.label}</span>}
+        </span>
+      ))}
+    </nav>
+  );
 }
 
 export async function WikiSidebar({ locale, navGroups, currentPath }: { locale: string; navGroups: NavGroup[]; currentPath?: string }) {
   const t = await getTranslations({ locale, namespace: "shared" });
   const isActive = (href: string) => currentPath === href;
+
   return (
     <aside className="space-y-6 lg:sticky lg:top-24 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto lg:pr-1">
       <section className="rounded-2xl border border-border bg-card/60 p-5 shadow-sm">
@@ -111,14 +135,16 @@ export async function WikiSidebar({ locale, navGroups, currentPath }: { locale: 
         <h3 className="mb-3 text-sm font-bold text-foreground">{t("activeCodes")}</h3>
         <div className="space-y-3 text-sm">
           <div className="rounded-xl bg-muted p-3">
-            <code className="font-bold text-foreground">暂无兑换码</code>
-            <p className="mt-1 text-muted-foreground">No official Dragon Ball Xenoverse 3 redemption codes have been announced yet.</p>
+            <code className="font-bold text-foreground">Official Site</code>
+            <p className="mt-1 text-muted-foreground">Follow Bandai Namco for release-window updates and platform listings.</p>
           </div>
           <div className="rounded-xl bg-muted p-3">
-            <code className="font-bold text-foreground">暂无兑换码</code>
-            <p className="mt-1 text-muted-foreground">Check Bandai Namco official news and channels for future code announcements.</p>
+            <code className="font-bold text-foreground">Steam Page</code>
+            <p className="mt-1 text-muted-foreground">Wishlist the PC version and track the official 2027 launch window.</p>
           </div>
-          <Link href={localizeHref("/codes", locale)} className="inline-flex items-center gap-1 text-sm font-semibold text-[hsl(var(--nav-theme))]">{t("viewAllCodes")} <ChevronRight className="h-4 w-4" /></Link>
+          <Link href={localizeHref("/release", locale)} className="inline-flex items-center gap-1 text-sm font-semibold text-[hsl(var(--nav-theme))]">
+            {t("viewAllCodes")} <ChevronRight className="h-4 w-4" />
+          </Link>
         </div>
       </section>
     </aside>
@@ -128,13 +154,16 @@ export async function WikiSidebar({ locale, navGroups, currentPath }: { locale: 
 export async function SiteFooter({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "footer" });
   const site = await getTranslations({ locale, namespace: "site" });
+
   return (
     <footer className="mt-16 border-t border-border bg-card/30">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="mb-10 rounded-2xl border border-border bg-muted/40 p-5">
           <div className="font-bold text-foreground">{site("name")}</div>
           <p className="mt-1 text-sm text-muted-foreground">{t("description")}</p>
-          <Link href="https://www.bandainamcoent.com/games/dragon-ball-xenoverse-3" className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--nav-theme))]">{t("playGame")} <ExternalLink className="h-4 w-4" /></Link>
+          <Link href="https://www.bandainamcoent.com/games/dragon-ball-xenoverse-3" className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--nav-theme))]">
+            {t("playGame")} <ExternalLink className="h-4 w-4" />
+          </Link>
         </div>
         <p className="mb-8 text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">{site("legalNotice")}</p>
         <div className="grid gap-8 md:grid-cols-4">
@@ -151,7 +180,17 @@ export async function SiteFooter({ locale }: { locale: string }) {
               [t("vvBuilder"), "https://www.bandainamcoent.com/games/dragon-ball-xenoverse-3/news"],
             ]}
           />
-          <FooterList title={t("guides")} links={[[t("beginnerGuide"), "/beginner-guide"], [t("raceGuides"), "/races"], [t("bossGuides"), "/bosses"], [t("buildGuide"), "/builds"], [t("privacyPolicy"), "/privacy-policy"], [t("termsOfService"), "/terms-of-service"]]} />
+          <FooterList
+            title={t("guides")}
+            links={[
+              [t("beginnerGuide"), "/guide"],
+              [t("releaseGuides"), "/release"],
+              [t("platformGuides"), "/platforms"],
+              [t("characterGuides"), "/characters"],
+              [t("privacyPolicy"), "/privacy-policy"],
+              [t("termsOfService"), "/terms-of-service"],
+            ]}
+          />
         </div>
         <p className="mt-10 border-t border-border pt-6 text-xs text-muted-foreground">{t("copyright")}</p>
       </div>
@@ -159,7 +198,20 @@ export async function SiteFooter({ locale }: { locale: string }) {
   );
 }
 
-function FooterList({ title, links }: { title: string; links: string[][] }) { return <div><h4 className="font-semibold text-foreground">{title}</h4><ul className="mt-3 space-y-2 text-sm text-muted-foreground">{links.map(([label, href]) => <li key={href}><Link className="hover:text-foreground" href={href}>{label}</Link></li>)}</ul></div>; }
+function FooterList({ title, links }: { title: string; links: string[][] }) {
+  return (
+    <div>
+      <h4 className="font-semibold text-foreground">{title}</h4>
+      <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+        {links.map(([label, href]) => (
+          <li key={href}>
+            <Link className="hover:text-foreground" href={href}>{label}</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export function TrailerCard() {
   return (
@@ -205,4 +257,6 @@ export function TrailerButton({ videoId }: { videoId: string }) {
   );
 }
 
-export function JsonLd({ data }: { data: unknown }) { return <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />; }
+export function JsonLd({ data }: { data: unknown }) {
+  return <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
+}

@@ -10,7 +10,7 @@
 
 ## G2. 更新导航页和导航栏的分类名称
 
-**参照（分类真相源）：** 导航分类来自 `./doc/keywords.json`（长尾关键词挖掘产物）的 `categories` 数组——每个 `{category, keywords[]}` 元素的 `category` 字段就是分类 slug（如 `guide` / `ships` / `builds` / `mods`）。**不要照搬 `00基础信息.md` 的"内容站导航栏分类"建议**——那只是采集期 ChatGPT 给的参考，与实际按关键词聚类生成的文章目录往往不一致。分类 slug 必须与 `D:\code\seoscout\output\anime_vanguards/articles/<lang>/` 下的文章子目录名一一对应（G1 复制进 `content/<lang>/` 后，这些子目录就是分类，也是 `navigation.ts` 的 key、`content.ts` 的 GROUP_TITLES slug）。
+**参照（分类真相源）：** 导航分类来自 `./doc/keywords.json`（长尾关键词挖掘产物）的 `categories` 数组——每个 `{category, keywords[]}` 元素的 `category` 字段就是分类 slug（如 `guide` / `ships` / `builds` / `mods`）。**不要照搬 `00基础信息.md` 的"内容站导航栏分类"建议**——那只是采集期 ChatGPT 给的参考，与实际按关键词聚类生成的文章目录往往不一致。分类 slug 必须与 `D:\code\seoscout\output\dragon_ball_xenoverse_3/articles/<lang>/` 下的文章子目录名一一对应（G1 复制进 `content/<lang>/` 后，这些子目录就是分类，也是 `navigation.ts` 的 key、`content.ts` 的 GROUP_TITLES slug）。
 
 **⚠️ nav 值命名规则（强制）：**
 - nav 值必须是 category key 的首字母大写形式，只允许单个英文单词
