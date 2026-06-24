@@ -82,49 +82,49 @@
           "badge": "Start Here",
           "title": "Beginner Guide",
           "description": "Understand Dragon Ball Xenoverse 3, AGE 1000 West City, created heroes, race choices, and the launch-prep path.",
-          "href": "/beginner-guide"
+          "href": "/guide"
         },
         {
           "badge": "Updated",
           "title": "Release Date",
           "description": "Track the 2027 launch window, supported platforms, developer, publisher, and official store listings.",
-          "href": "/release-date"
+          "href": "/release/dragon-ball-xenoverse-3-release-date"
         },
         {
           "badge": "Official",
           "title": "Trailers",
           "description": "Review the announcement trailer and Welcome to West City gameplay reveal with the key systems they introduced.",
-          "href": "/trailers"
+          "href": "/media/dragon-ball-xenoverse-3-trailer"
         },
         {
           "badge": "Guide",
           "title": "Gameplay Systems",
           "description": "Learn how high-speed combat, aerial movement, Ki Attacks, Soul Assist, and Soul Switch shape battles.",
-          "href": "/gameplay"
+          "href": "/guide/dragon-ball-xenoverse-3-game-mechanics"
         },
         {
           "badge": "Story",
           "title": "West City Story",
           "description": "Explore AGE 1000, the Great Saiya Squad, West City University, and the new original cast.",
-          "href": "/story"
+          "href": "/features/dragon-ball-xenoverse-3-story-mode"
         },
         {
           "badge": "Guide",
           "title": "Character Creation",
           "description": "Compare created-hero basics, race-driven combat options, Saiyan forms, and Earthling playstyle notes.",
-          "href": "/character-creation"
+          "href": "/customization/dragon-ball-xenoverse-3-character-creation"
         },
         {
           "badge": "New",
           "title": "Soul Systems",
           "description": "Break down Soul Assist team attacks and Soul Switch power-ups shown in official gameplay footage.",
-          "href": "/soul-systems"
+          "href": "/features/dragon-ball-xenoverse-3-new-features"
         },
         {
           "badge": "Cast",
           "title": "Characters",
           "description": "Browse revealed Dragon Ball characters and original heroes including Bulma, Gamma 1, Brett, Lilica, ROM, and Tap.",
-          "href": "/characters"
+          "href": "/characters/dragon-ball-xenoverse-3-characters"
         }
       ]
     },
@@ -417,7 +417,6 @@
     "activeCodes": "Official Links",
     "updated": "Updated",
     "viewAllCodes": "Open release hub",
-    "playOnRoblox": "Official Site",
     "inThisSection": "In this section",
     "tableOfContents": "Table of Contents",
     "nextSteps": "Next Steps",
@@ -440,16 +439,13 @@
     "playGame": "Official Dragon Ball Xenoverse 3 Site",
     "officialDiscord": "DBXV Community Discord via Reddit",
     "officialYoutube": "Bandai Namco Official YouTube",
-    "vvBuilder": "Official Dragon Ball Xenoverse 3 News",
     "beginnerGuide": "Guide Hub",
-    "raceGuides": "Race Guides",
-    "bossGuides": "Boss Guides",
-    "buildGuide": "Build Guide",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
     "releaseGuides": "Release Guides",
     "platformGuides": "Platform Guides",
-    "characterGuides": "Character Guides"
+    "characterGuides": "Character Guides",
+    "officialNews": "Official Dragon Ball Xenoverse 3 News"
   },
   "release": {
     "overviewTitle": "Dragon Ball Xenoverse 3 Release",

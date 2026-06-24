@@ -17,7 +17,10 @@ const siteName = "Dragon Ball Xenoverse 3 Wiki";
 type Messages = typeof en;
 
 function languageAlternates(pathname: string) {
-  return Object.fromEntries(routing.locales.map((locale) => [locale, locale === "en" ? pathname : `/${locale}${pathname}`]));
+  return {
+    ...Object.fromEntries(routing.locales.map((locale) => [locale, locale === "en" ? pathname : `/${locale}${pathname}`])),
+    "x-default": pathname,
+  };
 }
 
 function localizedPathname(pathname: string, locale: Locale) {

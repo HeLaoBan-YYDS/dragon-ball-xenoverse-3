@@ -4,9 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bea6a923-81f0-4487-95c6-51fed8751e13" name="Changes" comment="阶段三">
-      <change beforePath="$PROJECT_DIR$/doc/步骤四.txt" beforeDir="false" afterPath="$PROJECT_DIR$/doc/步骤四.txt" afterDir="false" />
+    <list default="true" id="bea6a923-81f0-4487-95c6-51fed8751e13" name="Changes" comment="阶段五">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/en/features/dragon-ball-xenoverse-3-crossplay.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/content/en/features/dragon-ball-xenoverse-3-crossplay.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/en/media/dragon-ball-xenoverse-3-demo.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/content/en/media/dragon-ball-xenoverse-3-demo.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/[...slug]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/[...slug]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/sitemap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/sitemap.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/site.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/site.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18n/routing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n/routing.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/locales/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locales/es.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/es.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locales/fr.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/fr.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locales/ja.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/ja.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +89,7 @@
       <option name="presentableId" value="Default" />
       <updated>1782181932330</updated>
       <workItem from="1782181933450" duration="2000" />
-      <workItem from="1782281089492" duration="6055000" />
+      <workItem from="1782281089492" duration="7469000" />
     </task>
     <task id="LOCAL-00001" summary="初始化步骤">
       <option name="closed" value="true" />
@@ -120,7 +131,31 @@
       <option name="project" value="LOCAL" />
       <updated>1782287931712</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="阶段四">
+      <option name="closed" value="true" />
+      <created>1782289230708</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1782289230708</updated>
+    </task>
+    <task id="LOCAL-00007" summary="阶段五">
+      <option name="closed" value="true" />
+      <created>1782290116327</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1782290116327</updated>
+    </task>
+    <task id="LOCAL-00008" summary="阶段五">
+      <option name="closed" value="true" />
+      <created>1782290123425</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1782290123425</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,6 +167,8 @@
     <MESSAGE value="阶段一" />
     <MESSAGE value="阶段二" />
     <MESSAGE value="阶段三" />
-    <option name="LAST_COMMIT_MESSAGE" value="阶段三" />
+    <MESSAGE value="阶段四" />
+    <MESSAGE value="阶段五" />
+    <option name="LAST_COMMIT_MESSAGE" value="阶段五" />
   </component>
 </project>

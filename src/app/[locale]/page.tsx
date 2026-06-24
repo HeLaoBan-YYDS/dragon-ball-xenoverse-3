@@ -11,14 +11,26 @@ const siteName = "Dragon Ball Xenoverse 3 Wiki";
 
 type Messages = typeof en;
 
+function localizedPathname(pathname: string, locale: string) {
+  return locale === "en" ? pathname : `/${locale}${pathname === "/" ? "" : pathname}`;
+}
+
+function languageAlternates(pathname: string) {
+  return {
+    ...Object.fromEntries(routing.locales.map((locale) => [locale, localizedPathname(pathname, locale)])),
+    "x-default": localizedPathname(pathname, routing.defaultLocale),
+  };
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const messages = (await getMessages({ locale })) as Messages;
+  const pathname = "/";
   return {
     title: messages.home.meta.title,
     description: messages.home.meta.description,
-    alternates: { canonical: locale === "en" ? "/" : `/${locale}`, languages: { en: "/" } },
-    openGraph: { title: messages.home.meta.title, description: messages.home.meta.description, url: siteUrl, images: [`${siteUrl}/images/hero.webp`] },
+    alternates: { canonical: localizedPathname(pathname, locale), languages: languageAlternates(pathname) },
+    openGraph: { title: messages.home.meta.title, description: messages.home.meta.description, url: `${siteUrl}${localizedPathname(pathname, locale)}`, images: [`${siteUrl}/images/hero.webp`] },
     twitter: { card: "summary_large_image", title: messages.home.meta.title, description: messages.home.meta.description, images: [`${siteUrl}/images/hero.webp`] },
   };
 }

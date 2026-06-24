@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const image = `${siteUrl}/images/hero.webp`;
   return {
     metadataBase: new URL(siteUrl),
-    title: { default: "dragon ball xenoverse 3 Wiki", template: "%s" },
+    title: { default: "Dragon Ball Xenoverse 3 Wiki", template: "%s" },
     description: "Fan-made Dragon Ball Xenoverse 3 wiki covering official trailers, PS5, Xbox Series X|S, Steam news, West City, races, Soul Assist, and Soul Switch.",
     openGraph: { type: "website", locale, url: siteUrl, siteName, images: [{ url: image, alt: siteName }] },
     twitter: { card: "summary_large_image", title: siteName, description: "Fan-made Dragon Ball Xenoverse 3 wiki covering official trailers, platforms, West City, races, and combat systems.", images: [{ url: image, alt: siteName }] },

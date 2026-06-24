@@ -177,7 +177,7 @@ export async function SiteFooter({ locale }: { locale: string }) {
               [t("playGame"), "https://www.bandainamcoent.com/games/dragon-ball-xenoverse-3"],
               [t("officialDiscord"), "https://www.reddit.com/r/dbxv/"],
               [t("officialYoutube"), "https://www.youtube.com/NamcoBandaiGames"],
-              [t("vvBuilder"), "https://www.bandainamcoent.com/games/dragon-ball-xenoverse-3/news"],
+              [t("officialNews"), "https://www.bandainamcoent.com/games/dragon-ball-xenoverse-3/news"],
             ]}
           />
           <FooterList
