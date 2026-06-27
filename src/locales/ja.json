@@ -414,7 +414,12 @@
   },
   "shared": {
     "wikiNavigation": "Wiki ナビゲーション",
+    "overview": "概要",
     "activeCodes": "公式リンク",
+    "officialSite": "公式サイト",
+    "officialSiteDescription": "発売時期の更新情報や対応プラットフォームは Bandai Namco をフォローして確認できます。",
+    "steamPage": "Steam ページ",
+    "steamPageDescription": "PC 版をウィッシュリストに追加し、公式の 2027 年発売時期を確認できます。",
     "updated": "更新されました",
     "viewAllCodes": "オープンリリースハブ",
     "inThisSection": "このセクションでは",

@@ -135,12 +135,12 @@ export async function WikiSidebar({ locale, navGroups, currentPath }: { locale: 
         <h3 className="mb-3 text-sm font-bold text-foreground">{t("activeCodes")}</h3>
         <div className="space-y-3 text-sm">
           <div className="rounded-xl bg-muted p-3">
-            <code className="font-bold text-foreground">Official Site</code>
-            <p className="mt-1 text-muted-foreground">Follow Bandai Namco for release-window updates and platform listings.</p>
+            <code className="font-bold text-foreground">{t("officialSite")}</code>
+            <p className="mt-1 text-muted-foreground">{t("officialSiteDescription")}</p>
           </div>
           <div className="rounded-xl bg-muted p-3">
-            <code className="font-bold text-foreground">Steam Page</code>
-            <p className="mt-1 text-muted-foreground">Wishlist the PC version and track the official 2027 launch window.</p>
+            <code className="font-bold text-foreground">{t("steamPage")}</code>
+            <p className="mt-1 text-muted-foreground">{t("steamPageDescription")}</p>
           </div>
           <Link href={localizeHref("/release", locale)} className="inline-flex items-center gap-1 text-sm font-semibold text-[hsl(var(--nav-theme))]">
             {t("viewAllCodes")} <ChevronRight className="h-4 w-4" />

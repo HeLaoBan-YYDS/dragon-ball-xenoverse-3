@@ -3,6 +3,10 @@ import path from "path";
 import GithubSlugger from "github-slugger";
 import { CONTENT_TYPES as CONFIG_CONTENT_TYPES } from "@/config/navigation";
 import { routing, type Locale } from "@/i18n/routing";
+import enMessages from "@/locales/en.json";
+import esMessages from "@/locales/es.json";
+import frMessages from "@/locales/fr.json";
+import jaMessages from "@/locales/ja.json";
 
 export const CONTENT_TYPES = CONFIG_CONTENT_TYPES;
 
@@ -218,21 +222,6 @@ export interface NavGroup {
   links: Array<{ label: string; href: string; badge?: string }>;
 }
 
-const GROUP_TITLES: Record<string, string> = {
-  release: "Release",
-  media: "Media",
-  guide: "Guide",
-  customization: "Customization",
-  characters: "Characters",
-  platforms: "Platforms",
-  features: "Features",
-  community: "Community",
-};
-
-const GROUP_TITLES_BY_LOCALE: Record<string, Record<string, string>> = {};
-
-const OVERVIEW_LABEL_BY_LOCALE: Record<string, string> = {};
-
 const GROUP_ORDER: string[] = [
   "release",
   "media",
@@ -243,6 +232,32 @@ const GROUP_ORDER: string[] = [
   "features",
   "community",
 ];
+
+type Messages = typeof enMessages;
+
+const MESSAGES_BY_LOCALE: Record<Locale, Partial<Messages>> = {
+  en: enMessages,
+  es: esMessages as unknown as Partial<Messages>,
+  fr: frMessages as unknown as Partial<Messages>,
+  ja: jaMessages as unknown as Partial<Messages>,
+};
+
+function getNavLabel(language: Locale, key: string): string | undefined {
+  const localeNav = MESSAGES_BY_LOCALE[language]?.nav as
+    | Partial<Record<string, string>>
+    | undefined;
+  const defaultNav = enMessages.nav as Record<string, string>;
+
+  return localeNav?.[key] ?? defaultNav[key];
+}
+
+function getSharedLabel(language: Locale, key: keyof Messages["shared"]): string {
+  const localeShared = MESSAGES_BY_LOCALE[language]?.shared as
+    | Partial<Record<keyof Messages["shared"], string>>
+    | undefined;
+
+  return localeShared?.[key] ?? enMessages.shared[key];
+}
 
 export function getDynamicNavigation(language: Locale = "en"): NavGroup[] {
   const localeDir = path.join(CONTENT_ROOT, language);
@@ -264,7 +279,7 @@ export function getDynamicNavigation(language: Locale = "en"): NavGroup[] {
     if (slugPaths.length === 0) continue;
 
     const links: NavGroup["links"] = [];
-    const overviewLabel = OVERVIEW_LABEL_BY_LOCALE[language] || "Overview";
+    const overviewLabel = getSharedLabel(language, "overview");
     links.push({ label: overviewLabel, href: `/${groupSlug}` });
 
     for (const segments of slugPaths) {
@@ -292,10 +307,8 @@ export function getDynamicNavigation(language: Locale = "en"): NavGroup[] {
       links.push({ label: title, href: `/${groupSlug}/${articleSlug}`, badge });
     }
 
-    const localTitles = GROUP_TITLES_BY_LOCALE[language] || {};
     const groupTitle =
-      localTitles[groupSlug] ||
-      GROUP_TITLES[groupSlug] ||
+      getNavLabel(language, groupSlug) ||
       groupSlug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 
     groups.push({

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bea6a923-81f0-4487-95c6-51fed8751e13" name="Changes" comment="增加监控" />
+    <list default="true" id="bea6a923-81f0-4487-95c6-51fed8751e13" name="Changes" comment="sitemap.ts" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,6 +95,7 @@
       <updated>1782181932330</updated>
       <workItem from="1782181933450" duration="2000" />
       <workItem from="1782281089492" duration="12908000" />
+      <workItem from="1782524344716" duration="1218000" />
     </task>
     <task id="LOCAL-00001" summary="初始化步骤">
       <option name="closed" value="true" />
@@ -208,7 +209,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782316659499</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="sitemap.ts">
+      <option name="closed" value="true" />
+      <created>1782524356504</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1782524356504</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +235,7 @@
     <MESSAGE value="阶段七" />
     <MESSAGE value="SEO监测" />
     <MESSAGE value="增加监控" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加监控" />
+    <MESSAGE value="sitemap.ts" />
+    <option name="LAST_COMMIT_MESSAGE" value="sitemap.ts" />
   </component>
 </project>

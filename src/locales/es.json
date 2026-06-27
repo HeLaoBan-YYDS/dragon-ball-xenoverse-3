@@ -414,7 +414,12 @@
   },
   "shared": {
     "wikiNavigation": "Navegación Wiki",
+    "overview": "Resumen",
     "activeCodes": "Enlaces oficiales",
+    "officialSite": "Sitio oficial",
+    "officialSiteDescription": "Sigue a Bandai Namco para ver actualizaciones de la ventana de lanzamiento y las plataformas.",
+    "steamPage": "Página de Steam",
+    "steamPageDescription": "Añade la versión de PC a tu lista de deseados y sigue la ventana oficial de lanzamiento de 2027.",
     "updated": "Actualizado",
     "viewAllCodes": "Centro de lanzamiento abierto",
     "inThisSection": "En esta sección",
